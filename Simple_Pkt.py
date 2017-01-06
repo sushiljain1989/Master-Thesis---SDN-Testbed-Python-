@@ -32,13 +32,15 @@ def run(cip , cport):
     net.addController('c', controller=RemoteController, ip=cip, port=int(cport) )
     net.start()
 
-    print net.pingAll()
+    print "Packets dropped during pingall : " + str( net.pingAll() ) + "%"
     h1, h2, s1 = net.get('h1', 'h2', 's1')
     #print "iperf between h1 and h2"
     #net.iperf((h1, h2))
     #h1.cmdPrint('iperf -s &')
     #h2.cmdPrint('iperf -t 10 -c', h1.IP() )
-    print s1.dpctl('dump-flows')
+    flowRules =  s1.dpctl('dump-flows')
+    print "# of installed flow rules: " + str( len(flowRules.split('\r')) - 2 ) #print isinstance(flowRules, list)
+    #print isinstance(flowRules, str)
     print "Stopping Mininet"
     net.stop()
 
@@ -48,3 +50,4 @@ if __name__ == '__main__':
    port = str(sys.argv[2])
    setLogLevel('info')
    run(ip , port)
+~                          

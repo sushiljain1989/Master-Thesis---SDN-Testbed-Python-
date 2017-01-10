@@ -14,13 +14,15 @@ killMininet()
 }
 runApplication()
 {
+     echo -e "********Preparing $1 controller*********\n"
+
     if [ "frenetic" == "$1" ]
         then
             runController "$1"
             nohup python $TESTBEDHOME/frenetic_app.py > $TESTBEDHOME/logs/app_frenetic.out&
     elif [ "pyretic" == "$1" ]
         then
-            echo -e "********Preparing Pyretic controller with application*********\n"
+            #echo -e "********Preparing Kinetic controller with application*********\n"
             echo -e "Copying application to Pyretic modules directory\n"
             cp $TESTBEDHOME/pyretic_app.* $PYRETICHOME/pyretic/modules/
             echo -e "Changing directory to Pyretic Home\n"
@@ -29,7 +31,7 @@ runApplication()
             nohup pyretic.py -m p0 pyretic.modules.pyretic_app > $TESTBEDHOME/logs/controller_and_app_pyretic.out&
             
     
-elif [ "kinetic" == "$1" ]
+   elif [ "kinetic" == "$1" ]
         then
             echo -e "********Preparing Kinetic controller with application*********\n"
             echo -e "Copying application to Kinetic app directory\n"
@@ -52,11 +54,7 @@ killApplication()
         killController "$1"
         kill -9 $(lsof -i:41414) 2> /dev/null
 
-    elif [ "pyretic" == "$1" ]
-         then
-         kill -9 $(lsof -i:6633) 2> /dev/null
-         kill -9 $(lsof -i:41414) 2> /dev/null
-    elif [ "kinetic" == "$1" ]
+    elif [ "pyretic" == "$1" ] || [ "kinetic" == "$1" ]
          then
          kill -9 $(lsof -i:6633) 2> /dev/null
          kill -9 $(lsof -i:41414) 2> /dev/null
@@ -66,7 +64,7 @@ killApplication()
 }
 runController()
 {
-    echo -e "Running frenetic controller\n"
+    echo -e "Running $1 controller\n"
     nohup frenetic http-controller --verbosity debug > $TESTBEDHOME/logs/controller_frenetic.out&
     CPID=$!
     

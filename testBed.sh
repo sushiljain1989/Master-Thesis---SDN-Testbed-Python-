@@ -33,7 +33,7 @@ runApplication()
     
    elif [ "kinetic" == "$1" ]
         then
-            echo -e "********Preparing Kinetic controller with application*********\n"
+            #echo -e "********Preparing Kinetic controller with application*********\n"
             echo -e "Copying application to Kinetic app directory\n"
             cp $TESTBEDHOME/kinetic_app.* $PYRETICHOME/pyretic/kinetic/apps/
             echo -e "Changing directory to Pyretic Home\n"

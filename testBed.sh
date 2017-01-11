@@ -1,11 +1,12 @@
 #!/bin/bash
 TESTBEDHOME="$HOME/testbed"
 PYRETICHOME="$HOME/pyretic"
+UPLOAD_DIR="/var/www/html/testbed/uploads/"
 startMininet()
 {
     
      echo -e "Running mininet \n"
-     sudo -E python $TESTBEDHOME/Simple_Pkt.py 127.0.0.1 6633 > $TESTBEDHOME/logs/mininet_$1.out
+     sudo -E python $TESTBEDHOME/Simple_Pkt.py 127.0.0.1 6633 > $TESTBEDHOME/logs/mininet_$1_$2.out
 }
 killMininet()
 {
@@ -14,28 +15,28 @@ killMininet()
 }
 runApplication()
 {
-     echo -e "********Preparing $1 controller*********\n"
-
     if [ "frenetic" == "$1" ]
         then
             runController "$1"
-            nohup python $TESTBEDHOME/frenetic_app.py > $TESTBEDHOME/logs/app_frenetic.out&
+            nohup python $UPLOAD_DIR/$1/$2 > $TESTBEDHOME/logs/app_frenetic.out&
     elif [ "pyretic" == "$1" ]
         then
-            #echo -e "********Preparing Kinetic controller with application*********\n"
+	    echo -e "$2"
+	    #exit 1
+            echo -e "********Preparing Pyretic controller with application*********\n"
             echo -e "Copying application to Pyretic modules directory\n"
-            cp $TESTBEDHOME/pyretic_app.* $PYRETICHOME/pyretic/modules/
+            cp $UPLOAD_DIR/$1/$2 $PYRETICHOME/pyretic/modules/
             echo -e "Changing directory to Pyretic Home\n"
             cd $PYRETICHOME
             echo -e "Running Pyretic controller with application\n"
             nohup pyretic.py -m p0 pyretic.modules.pyretic_app > $TESTBEDHOME/logs/controller_and_app_pyretic.out&
             
     
-   elif [ "kinetic" == "$1" ]
+elif [ "kinetic" == "$1" ]
         then
-            #echo -e "********Preparing Kinetic controller with application*********\n"
+            echo -e "********Preparing Kinetic controller with application*********\n"
             echo -e "Copying application to Kinetic app directory\n"
-            cp $TESTBEDHOME/kinetic_app.* $PYRETICHOME/pyretic/kinetic/apps/
+            cp $UPLOAD_DIR/$1/$2 $PYRETICHOME/pyretic/kinetic/apps/
             echo -e "Changing directory to Pyretic Home\n"
             cd $PYRETICHOME
             export KINETICPATH=$HOME/pyretic/pyretic/kinetic
@@ -54,7 +55,11 @@ killApplication()
         killController "$1"
         kill -9 $(lsof -i:41414) 2> /dev/null
 
-    elif [ "pyretic" == "$1" ] || [ "kinetic" == "$1" ]
+    elif [ "pyretic" == "$1" ]
+         then
+         kill -9 $(lsof -i:6633) 2> /dev/null
+         kill -9 $(lsof -i:41414) 2> /dev/null
+    elif [ "kinetic" == "$1" ]
          then
          kill -9 $(lsof -i:6633) 2> /dev/null
          kill -9 $(lsof -i:41414) 2> /dev/null
@@ -64,7 +69,7 @@ killApplication()
 }
 runController()
 {
-    echo -e "Running $1 controller\n"
+    echo -e "Running frenetic controller\n"
     nohup frenetic http-controller --verbosity debug > $TESTBEDHOME/logs/controller_frenetic.out&
     CPID=$!
     
@@ -99,8 +104,8 @@ if [ "$1" == "-a" ] || [ "$1" == "-A" ] && [ "$3" == "-c" ] && [ "$5" == "-m" ]
                 if [ "$element" == "frenetic" ]
                     then
                         
-                        runApplication "$element"
-                        startMininet "$element"
+                        runApplication "$element" "$2"
+                        startMininet "$element" "$2"
                         killApplication "$element"
                         killMininet
                         sleep 5
@@ -108,8 +113,8 @@ if [ "$1" == "-a" ] || [ "$1" == "-A" ] && [ "$3" == "-c" ] && [ "$5" == "-m" ]
 
                 elif [ "$element" == "pyretic" ]
                     then
-                        runApplication "$element"
-                        startMininet "$element"
+                        runApplication "$element" "$2"
+                        startMininet "$element" "$2"
                         killApplication "$element"
                         killMininet
                         sleep 5
@@ -117,8 +122,8 @@ if [ "$1" == "-a" ] || [ "$1" == "-A" ] && [ "$3" == "-c" ] && [ "$5" == "-m" ]
                 elif [ "$element" == "kinetic" ]
                     then
                        
-                        runApplication "$element"
-                        startMininet "$element"
+                        runApplication "$element" "$2"
+                        startMininet "$element" "$2"
                         killApplication "$element"
                         killMininet
                         sleep 5

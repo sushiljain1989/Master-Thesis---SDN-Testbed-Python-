@@ -1,4 +1,6 @@
 import sys
+import mysql.connector
+from mysql.connector import Error
 from mininet.node import CPULimitedHost
 from mininet.topo import Topo
 from mininet.net import Mininet
@@ -32,17 +34,42 @@ def run(cip , cport):
     net.addController('c', controller=RemoteController, ip=cip, port=int(cport) )
     net.start()
 
-    print "Packets dropped during pingall : " + str( net.pingAll() ) + "%"
+    pingall =  str( net.pingAll() )
+    print pingall
+    #updateJobResult(pingall , "pingall")
     h1, h2, s1 = net.get('h1', 'h2', 's1')
     #print "iperf between h1 and h2"
     #net.iperf((h1, h2))
     #h1.cmdPrint('iperf -s &')
     #h2.cmdPrint('iperf -t 10 -c', h1.IP() )
     flowRules =  s1.dpctl('dump-flows')
-    print "# of installed flow rules: " + str( len(flowRules.split('\r')) - 2 ) #print isinstance(flowRules, list)
+    flowRulesS =  str( len(flowRules.split('\r')) - 2 ) #print isinstance(flowRules, list)
     #print isinstance(flowRules, str)
-    print "Stopping Mininet"
+    print flowRulesS
+    #updateJobResult(flowRulesS , "flow_rules")
+    #print "Stopping Mininet"
     net.stop()
+
+def updateJobResult(result , testcase):
+	try:
+		conn = mysql.connector.connect(host='localhost', database='python_mysql', user='root', password='secret')
+		status = "Processing"
+		data = (result , status)
+		if conn.is_connected():
+			cursor = conn.cursor
+			if testcase == "pingall":
+				query = """ update jobs set pingall = %s where status = %s """
+			if testcase == "flow_rules":
+				query =  """ update jobs set flow_rules  = %s where status = %s """	
+			cursor.execute(query , data)
+			conn.commit()
+			cursor.close()
+			conn.close()
+	except Error as e:
+		print(e)
+	finally:
+		testcase = testcase
+
 
 if __name__ == '__main__':
    cmdargs = str(sys.argv)
@@ -50,4 +77,3 @@ if __name__ == '__main__':
    port = str(sys.argv[2])
    setLogLevel('info')
    run(ip , port)
-~                          

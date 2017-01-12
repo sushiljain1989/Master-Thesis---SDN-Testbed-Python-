@@ -56,7 +56,9 @@ border-color:pink;
 		echo "</table>";
 		?>
 		<br/><br/><br/>
-<a  style="margin-left:100 px;" href="status.php">Click here to refresh</a>
+Click here to refresh<a  style="margin-left:100 px;" href="status.php?format=html">[HTML]</a>
+<a  style="margin-left:100 px;" href="status.php?format=xml">[Xml]</a>
+<a  style="margin-left:100 px;" href="status.php?format=json">[Json]</a>
 <br/><br/>
 <a  style="margin-left:100 px;" href="index.php">Click here to add more applications</a>
 </body>

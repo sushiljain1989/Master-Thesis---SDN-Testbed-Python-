@@ -10,7 +10,7 @@ if(isset($_POST['test']) && isset($_FILES))
 	$conn = new mysqli("localhost", "root", "sunset", "jobs");
 
 	//echo "<pre>";print_r($_FILES); echo "</pre>";
-	$controllers = array("frenetic" , "pyretic" , "kinetic");
+	$controllers = array("frenetic" , "pyretic" , "kinetic" , "openmul");
 	
 	foreach ($controllers as $key => $v ) {
 		# code...
@@ -80,7 +80,7 @@ if(isset($_POST['test']) && isset($_FILES))
 	$conn->close();
 
 	echo '<a href="index.php"> Click here to add more applications </a><br>';
-	echo '<a href="status.php"> Click here to view progress </a><br>';
+	echo '<a href="status.php?format=html"> Click here to view progress </a><br>';
 	die;
 
 }
@@ -130,6 +130,13 @@ $( document ).ready(function() {
 			Kinetic
 		</td>
 		<td><input class="apps" type="file" name="kinetic[]" multiple></td>
+		
+	</tr>
+	<tr>
+		<td>
+			OpenMul
+		</td>
+		<td><input class="apps" type="file" name="openmul[]"></td>
 		
 	</tr>
 	</tbody>

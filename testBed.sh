@@ -32,7 +32,7 @@ runApplication()
             nohup pyretic.py -m p0 pyretic.modules.pyretic_app > $TESTBEDHOME/logs/controller_and_app_pyretic.out&
             
     
-elif [ "kinetic" == "$1" ]
+    elif [ "kinetic" == "$1" ]
         then
             echo -e "********Preparing Kinetic controller with application*********\n"
             echo -e "Copying application to Kinetic app directory\n"
@@ -97,41 +97,11 @@ fi
 
 if [ "$1" == "-a" ] || [ "$1" == "-A" ] && [ "$3" == "-c" ] && [ "$5" == "-m" ]
     then
-        IFS=', ' read -r -a array <<< "$4"
-
-        for element in "${array[@]}"
-            do
-                if [ "$element" == "frenetic" ]
-                    then
-                        
-                        runApplication "$element" "$2"
-                        startMininet "$element" "$2"
-                        killApplication "$element"
-                        killMininet
+        		runApplication "$4" "$2"
+                        startMininet "$4" "$2"
+                        killApplication "$4"
+			killMininet
                         sleep 5
-
-
-                elif [ "$element" == "pyretic" ]
-                    then
-                        runApplication "$element" "$2"
-                        startMininet "$element" "$2"
-                        killApplication "$element"
-                        killMininet
-                        sleep 5
-
-                elif [ "$element" == "kinetic" ]
-                    then
-                       
-                        runApplication "$element" "$2"
-                        startMininet "$element" "$2"
-                        killApplication "$element"
-                        killMininet
-                        sleep 5
-
-                fi
-
-            done
-
 
 fi
 echo -e "====================\n"

@@ -13,7 +13,12 @@ class frenetic_controller:
 
 	def stopController(self):
 		print "stopping controller"
-		print self.process.pid
-		self.process.kill()
-		subprocess.Popen(["freeport" , self.port], shell=False, stdout=subprocess.PIPE)
-
+        print self.port
+        cmd = 'lsof -t -i:{0}'.format(self.port)
+        pid = subprocess.check_output(cmd, shell=True)
+        pid = int(pid)
+        print pid
+        killcmd = 'kill -9 {0}'.format(pid)
+        killcmd2 = 'kill -9 {0}'.format(self.process.pid)
+        os.system(killcmd)
+        os.system(killcmd2)

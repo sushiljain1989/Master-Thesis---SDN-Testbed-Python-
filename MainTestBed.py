@@ -61,7 +61,9 @@ if __name__ == '__main__':
    #start controller
    controllerObject = obj.getControllerObject(controllerName)
    controllerObject.runController(portnIP["ip"],portnIP["port"])
-   
+   #run app
+   appRunnerObject = obj.getAppRunnerObject(controllerName)
+   appRunnerObject.runApp(applicationName , portnIP)
    #stop controller
    controllerObject.stopController()
 		

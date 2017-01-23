@@ -52,7 +52,7 @@ class MainTestBed():
 if __name__ == '__main__':
    obj = MainTestBed()
    controllerName = "frenetic"
-   applicationName = "demo_app.py"
+   applicationName = "frenetic_app.py"
    networkTopoName = "SimpleTopo"
    testCaseName = "demo_test"
    writerName = "json_writer"

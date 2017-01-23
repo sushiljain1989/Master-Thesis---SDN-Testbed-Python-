@@ -61,24 +61,7 @@ if __name__ == '__main__':
    #start controller
    controllerObject = obj.getControllerObject(controllerName)
    controllerObject.runController(portnIP["ip"],portnIP["port"])
-   #start application
-   appRunnerObject = obj.getAppRunnerObject(controllerName)
-   appRunnerObject.runApp(applicationName , portnIP)
-
-   #start network
-   networkObject = obj.getTopoObject(networkTopoName)
-   networkObject.start(portnIP)
-   #Run Test-case
-   testCaseObject = obj.getTestCaseObject(testCaseName)
-   result = testCaseObject.execute()
-   #Write output
-   writerObject = obj.getOutputWriteObject(writerName)
-   writerObject.write(result)
-   #stop network
-   networkObject.stop()
-
-   #stop application
-   appRunnerObject.stopApp()
+   
    #stop controller
    controllerObject.stopController()
 		

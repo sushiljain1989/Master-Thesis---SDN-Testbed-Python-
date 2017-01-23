@@ -5,7 +5,8 @@ class frenetic_controller:
 
 	def runController(self , ip , port):
 		print "running controller at -> "+ip + ":" + port
-		self.process = subprocess.Popen(["ping" , "yahoo.com"], shell=False, stdout=subprocess.PIPE)
+		self.port = port
+		self.process = subprocess.Popen(["frenetic" , "http-controller" , "--verbosity" , "debug"], shell=False, stdout=subprocess.PIPE)
 		print self.process.pid
 		
 		
@@ -14,3 +15,5 @@ class frenetic_controller:
 		print "stopping controller"
 		print self.process.pid
 		self.process.kill()
+		subprocess.Popen(["freeport" , self.port], shell=False, stdout=subprocess.PIPE)
+

@@ -7,6 +7,34 @@ import os
 import time
 import pexpect
 import signal
+import netifaces
+import threading
+
+def threaded(f):
+    '''
+    a threading decorator
+    use @background above the function you want to run in the background
+    '''
+    def bg_f(*a, **kw):
+        threading.Thread(target=f, args=a, kwargs=kw).start()
+    return bg_f
+
+def runovsOfctlPeriodically(switchI):
+                #switchI = "s1"
+		#print switchI
+		os.remove("/home/vagrant/python/Master---Thesis/"+switchI+".log")
+                waitTime = 60.0
+                spentTime = 0.0
+                while True:
+                        if switchI in netifaces.interfaces():
+                                process = subprocess.Popen(["sudo ovs-ofctl dump-flows "+switchI+" >> /home/vagrant/python/Master---Thesis/"+switchI+".log"], shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+                                time.sleep(0.1)
+                                spentTime+=0.1
+                                if waitTime <= spentTime:
+                                        break
+                        else:
+                                time.sleep(0.01)
+
 class MainTestBed():
 
 
@@ -33,8 +61,11 @@ class MainTestBed():
 		appRunnerClass = getattr(module , controllerName+"_application_runner")
 		appRunnerObject = appRunnerClass()
 		return appRunnerObject
-
-	def runMininet(self , topoName , fileName, configs):	
+	
+	def runMininet(self , topoName , fileName, configs):
+		bgThread = threading.Thread(target=runovsOfctlPeriodically , args=("s1",))
+                bgThread.daemon = True
+                bgThread.start()	
 		#print configs
 		#fd = sys.stdin.fileno()
 		#fl = fcntl.fcntl(fd , fcntl.F_GETFL)
@@ -53,6 +84,12 @@ class MainTestBed():
 				output.strip()
 				break
 		#print process.poll()
+		#thread = threading.Thread(target=self.runovsOfctlPeriodically)
+		#thread.daemon = True
+		#thread.start()
+		'''bgThread = threading.Thread(target=runovsOfctlPeriodically , args=("s1",))
+		bgThread.daemon = True
+		bgThread.start()'''
 		time.sleep(1)
 		process.stdin.write("pingall \n")
                 process.stdin.flush()
@@ -96,16 +133,80 @@ class MainTestBed():
 		writerObject = writeClass()
 		return writerObject
 
+	def generateTraffic(self, mininetProcess):
+		runTime = 10
+		startTime = 1
+		while True:
+			if(startTime >= runTime):
+				break
+			mininetProcess.stdin.write("h1 nc h2 21 \n")
+                	mininetProcess.stdin.flush()
+			startTime+=1
+			time.sleep(1)
+		startTime = 1
+		print "starting ssh traffic"
+		while True:
+                        if(startTime >= runTime):
+                                break
+                        mininetProcess.stdin.write("h1 nc h2 22 \n")
+                        mininetProcess.stdin.flush()
+                        startTime+=1
+                        time.sleep(1)
+                startTime = 1
+		print "starting mail traffic"
+		while True:
+                        if(startTime >= runTime):
+                                break
+                        mininetProcess.stdin.write("h1 nc h2 25 \n")
+                        mininetProcess.stdin.flush()
+                        startTime+=1
+                        time.sleep(1)
+                startTime = 1
+		print "starting http traffic"
+		while True:
+                        if(startTime >= runTime):
+                                break
+                        mininetProcess.stdin.write("h1 nc h2 80 \n")
+                        mininetProcess.stdin.flush()
+                        startTime+=1
+                        time.sleep(1)
+                startTime = 1
+		print "starting https traffic"
+		while True:
+                        if(startTime >= runTime):
+                                break
+                        mininetProcess.stdin.write("h1 nc h2 443 \n")
+                        mininetProcess.stdin.flush()
+                        startTime+=1
+                        time.sleep(1)
+	
+	#@threaded
+'''	def runovsOfctlPeriodically(self, switchI):
+		#switchI = "s1"
+		waitTime = 60.0
+		spentTime = 0.0
+                while True:
+                        if switchI in netifaces.interfaces():                                
+				self.process = subprocess.Popen(["sudo ovs-ofctl dump-flows "+switchI+" >> /home/vagrant/python/Master---Thesis"+switchI+".log"], shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+				time.sleep(0.1)
+				spentTime+=0.1
+				if waitTime <= spentTime:
+					break
+			else:
+				time.sleep(0.1)	'''
+
 if __name__ == '__main__':
    resultsDict = {}
    
    obj = MainTestBed()
+   #print "hello"
+   #exit(0)
    #portnIP = obj.getIPnPort(controllerName)
-   controllers = ["frenetic" , "pyretic" , "kinetic" , "floodlight"]
-   #controllers = ["pyretic"]
-   applications = ["frenetic_learning.py" , "pyretic_pyretic_app.py" , "kinetic_kinetic_app.py" , "floodlight_Hub.java"]
+   #controllers = ["frenetic" , "pyretic" , "kinetic" , "floodlight"]
+   controllers = ["frenetic"]
+   applications = ["frenetic_frenetic_app.py" , "pyretic_pyretic_app.py" , "kinetic_kinetic_app.py" , "floodlight_Hub.java"]
    #testCases = ["test_flow_rules" , "test_pingall"]
-   testCases = ["test_packets"]
+   testCases = ["test_periodic_flowrules"]
    outputWriters = ["json_writer"]
    networkTopoName = "SimpleTopo"
    #mininetProcess = obj.runMininet(networkTopoName , networkTopoName, portnIP)
@@ -126,10 +227,11 @@ if __name__ == '__main__':
 				appRunnerObject = obj.getAppRunnerObject(controllerName)
    				appRunnerObject.runApp(applicationName , portnIP)
 				mininetProcess = obj.runMininet(networkTopoName , networkTopoName, portnIP)
+				obj.generateTraffic(mininetProcess)
 				appRunnerObject.stopApp()
 				obj.stopMininet(mininetProcess)
    		result = testCaseObject.result()
-		print result #time.sleep(5)
+		#print result #time.sleep(5)
 		resultDict = {}
    		resultDict["controller"] = controllerName
    		resultDict["testcase"] = testCaseName

@@ -4,6 +4,6 @@ class json_writer:
 
 	def write(self , result):
 		print "writing to json "
-		print result
+		#print result
 		json_result = json.dumps(result)
 		print json_result

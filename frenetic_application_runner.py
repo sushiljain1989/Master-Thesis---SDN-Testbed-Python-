@@ -16,6 +16,7 @@ class frenetic_application_runner:
 		
 
 	def stopApp(self):
-		print "stopping application"
+		print "waiting 60 seconds before stopping application"
+		time.sleep(60)
 		os.killpg(os.getpgid(self.process.pid), signal.SIGTERM)
 		time.sleep(2)

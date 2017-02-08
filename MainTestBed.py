@@ -202,11 +202,11 @@ if __name__ == '__main__':
    #print "hello"
    #exit(0)
    #portnIP = obj.getIPnPort(controllerName)
-   #controllers = ["frenetic" , "pyretic" , "kinetic" , "floodlight"]
-   controllers = ["frenetic"]
-   applications = ["frenetic_frenetic_app.py" , "pyretic_pyretic_app.py" , "kinetic_kinetic_app.py" , "floodlight_Hub.java"]
+   #controllers = ["ryu","frenetic" , "pyretic" , "kinetic" , "floodlight"]
+   controllers = ["ryu"]
+   applications = ["ryu_L2Switch.py","frenetic_frenetic_app.py" , "pyretic_pyretic_app.py" , "kinetic_kinetic_app.py" , "floodlight_Hub.java"]
    #testCases = ["test_flow_rules" , "test_pingall"]
-   testCases = ["test_periodic_flowrules"]
+   testCases = ["test_packets"]
    outputWriters = ["json_writer"]
    networkTopoName = "SimpleTopo"
    #mininetProcess = obj.runMininet(networkTopoName , networkTopoName, portnIP)

@@ -3,7 +3,8 @@ import subprocess
 import shlex
 import os
 import time
-class ryu_controller:
+from controller import controller
+class ryu_controller(controller):
 
         def runController(self , config):
 		self.ip = config['ip']

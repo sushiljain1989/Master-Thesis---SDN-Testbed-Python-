@@ -3,8 +3,7 @@ import subprocess
 import shlex
 import os
 import time
-from controller import controller
-class pyretic_controller(controller):
+class nettle_controller:
 
         def runController(self , config):
 		self.ip = config['ip']
@@ -20,14 +19,14 @@ class pyretic_controller(controller):
                 print "stopping controller"
                 #print self.port
                 cmd = 'lsof -t -i:{0}'.format(self.port)
-                cmd2 = 'lsof -t -i:{0}'.format(41414)
+                #cmd2 = 'lsof -t -i:{0}'.format(6653)
                 pid = subprocess.check_output(cmd, shell=True)
                 pid = int(pid)
-		pid2 = subprocess.check_output(cmd2, shell=True)
+		#pid2 = subprocess.check_output(cmd2, shell=True)
 		#pid2 = int(pid2)
-		pid2 = pid2.replace('\n',' ')
-                print pid2
+		#pid2 = pid2.replace('\n',' ')
+                #print pid2
                 killcmd = 'kill -9 {0}'.format(pid)
-                killcmd2 = 'kill -9 {0}'.format(pid2)
+                #killcmd2 = 'kill -9 {0}'.format(pid2)
                 os.system(killcmd)
-                os.system(killcmd2)
+                #os.system(killcmd2)

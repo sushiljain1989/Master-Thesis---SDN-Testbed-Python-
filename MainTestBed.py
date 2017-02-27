@@ -9,7 +9,9 @@ import pexpect
 import signal
 import netifaces
 import threading
-
+from controller import controller
+from application_runner import application_runner
+from test import test
 def threaded(f):
     '''
     a threading decorator
@@ -22,7 +24,9 @@ def threaded(f):
 def runovsOfctlPeriodically(switchI):
                 #switchI = "s1"
 		#print switchI
-		os.remove("/home/vagrant/python/Master---Thesis/"+switchI+".log")
+		file_path = "/home/vagrant/python/Master---Thesis/"+switchI+".log"
+		if os.path.exists(file_path):
+			os.remove(file_path)
                 waitTime = 60.0
                 spentTime = 0.0
                 while True:
@@ -84,11 +88,9 @@ class MainTestBed():
 				output.strip()
 				break
 		#print process.poll()
-		#thread = threading.Thread(target=self.runovsOfctlPeriodically)
 		#thread.daemon = True
 		#thread.start()
-		'''bgThread = threading.Thread(target=runovsOfctlPeriodically , args=("s1",))
-		bgThread.daemon = True
+		'''bgThread.daemon = True
 		bgThread.start()'''
 		time.sleep(1)
 		process.stdin.write("pingall \n")
@@ -202,20 +204,48 @@ if __name__ == '__main__':
    #print "hello"
    #exit(0)
    #portnIP = obj.getIPnPort(controllerName)
-   #controllers = ["ryu","frenetic" , "pyretic" , "kinetic" , "floodlight"]
-   controllers = ["ryu"]
-   applications = ["ryu_L2Switch.py","frenetic_frenetic_app.py" , "pyretic_pyretic_app.py" , "kinetic_kinetic_app.py" , "floodlight_Hub.java"]
+   #controllers = ["nettle","ryu","frenetic" , "pyretic" , "kinetic" , "floodlight"]
+   controllers = ["frenetic"]
+   applications = ["nettle_Main.hs","ryu_L2Switch.py","frenetic_frenetic_app.py" , "pyretic_pyretic_app.py" , "kinetic_kinetic_app.py" , "floodlight_Hub.java"]
    #testCases = ["test_flow_rules" , "test_pingall"]
-   testCases = ["test_packets"]
+   testCases = ["test_flowrules"]
    outputWriters = ["json_writer"]
    networkTopoName = "SimpleTopo"
    #mininetProcess = obj.runMininet(networkTopoName , networkTopoName, portnIP)
    #is_running = False;
+   for controllerName in controllers:
+        controllerObject = obj.getControllerObject(controllerName)
+   	if not isinstance(controllerObject, controller):
+                print controllerName +" is not an instance of controller"
+                controllers.remove(controllerName)
+		continue
+
+   for applicationName in applications:
+	l =  applicationName.split("_")
+        controllerName = l.pop(0)
+        appName = "_".join(l)
+        appRunnerObject = obj.getAppRunnerObject(controllerName)
+        if not isinstance(appRunnerObject, application_runner):
+                print applicationName +" is not an instance of application"
+		applications.remove(applicationName)
+                continue
+
+   for testCaseName in testCases:
+	testCaseObject = obj.getTestCaseObject(testCaseName)
+	if not isinstance(testCaseObject, test):
+                print testCaseName +" is not an instance of test"
+		testCases.remove(testCaseName)
+                continue
+
+   if(len(controllers) <= 0 or len(applications) <=0 or len(testCases) <= 0):
+	print "There should be atleast one controller, one application and one test case \n"
+	print "Exiting......."
+	sys.exit(-1)
 
    for controllerName in controllers:
 	portnIP = obj.getIPnPort(controllerName)
 	controllerObject = obj.getControllerObject(controllerName)
-   	controllerObject.runController(portnIP)
+	controllerObject.runController(portnIP)
 	for testCaseName in testCases:
 		testCaseObject = obj.getTestCaseObject(testCaseName)
                 testCaseObject.execute(config = portnIP )
@@ -227,7 +257,7 @@ if __name__ == '__main__':
 				appRunnerObject = obj.getAppRunnerObject(controllerName)
    				appRunnerObject.runApp(applicationName , portnIP)
 				mininetProcess = obj.runMininet(networkTopoName , networkTopoName, portnIP)
-				obj.generateTraffic(mininetProcess)
+				#obj.generateTraffic(mininetProcess)
 				appRunnerObject.stopApp()
 				obj.stopMininet(mininetProcess)
    		result = testCaseObject.result()

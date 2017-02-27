@@ -1,7 +1,8 @@
 import sys
 import time
 import subprocess
-class test_periodic_flowrules:
+from test import test
+class test_periodic_flowrules(test):
 	
 	def result(self):
 		switchI = "s1"

@@ -1,6 +1,7 @@
 import sys
 import time
-class test_pingall:
+from test import test
+class test_pingall(test):
 
 	def execute(self , process):
 		#stdout,stderr = process.communicate("pingall")

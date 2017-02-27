@@ -3,13 +3,20 @@ import subprocess
 import shlex
 import os
 import time
-class floodlight_controller:
+from controller import controller
+class floodlight_controller(controller):
 
         def runController(self , config):
                 self.ip = config['ip']
                 self.port = config['port']
                 print "running controller at -> "+self.ip + ":" + self.port 
-		 #self.process = subprocess.Popen(["frenetic" , "http-controller" , "--verbosity" , "debug"], shell=False, stdout=subprocess.PIPE)
+		'''while True:
+			if self.check_port(int(config['ip'])) == 0:
+				break
+			else:
+				time.sleep(0.1)
+		'''
+		#self.process = subprocess.Popen(["frenetic" , "http-controller" , "--verbosity" , "debug"], shell=False, stdout=subprocess.PIPE)
                 #time.sleep(10)
                 #print self.process.pid
 

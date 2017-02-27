@@ -1,7 +1,8 @@
 import sys
 import time
 import subprocess
-class test_flowrules:
+from test import test
+class test_flowrules(test):
 	
 	def result(self):
 		count = 0

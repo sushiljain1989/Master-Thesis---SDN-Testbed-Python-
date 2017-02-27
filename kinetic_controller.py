@@ -3,7 +3,9 @@ import subprocess
 import shlex
 import os
 import time
-class kinetic_controller:
+from controller import controller
+
+class kinetic_controller(controller):
 
         def runController(self , config):
                 self.ip = config['ip']

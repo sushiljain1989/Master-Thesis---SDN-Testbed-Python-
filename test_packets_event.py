@@ -1,7 +1,8 @@
 import sys
 import time
 import subprocess
-class test_packets_event:
+from test import test
+class test_packets_event(test):
 	
 	def result(self):
 		count = 0

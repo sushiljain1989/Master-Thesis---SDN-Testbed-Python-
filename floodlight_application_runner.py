@@ -4,11 +4,23 @@ import shlex
 import os
 import shutil
 import time
-class floodlight_application_runner:
+from application_runner import application_runner
+from controller import controller
+class floodlight_application_runner(application_runner):
 
+	configFilePath = "/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties"
+	modulesFilePath = "/src/main/resources/META-INF/services/"
+	moduleFile = "net.floodlightcontroller.core.module.IFloodlightModule"
+	codeDir = "/src/main/java"
+	configFile = "/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties"
 	def runApp(self , applicationName , config):
 		self.home = config['home']
-		self.old_file = ""
+		#configFile = "/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties"
+        	#modulesFilePath = "/src/main/resources/META-INF/services/"
+        	#moduleFile = "net.floodlightcontroller.core.module.IFloodlightModule"
+        	#codeDir = "/src/main/java"
+		
+		'''self.old_file = ""
 		new_file = ""
 		trace = 0
 		filePath = config['home']+"/src/main/resources/floodlightdefault.properties"
@@ -31,9 +43,54 @@ class floodlight_application_runner:
 		os.chdir(config['home']+"/src/main/java/net/floodlightcontroller")
 		os.mkdir(applicationNameLower , 0755)
                 shutil.copy('/home/vagrant/python/Master---Thesis/apps/floodlight/'+applicationName , config['home']+'/src/main/java/net/floodlightcontroller/'+applicationNameLower+'/' )
+		os.chdir(config['home'])'''
+		#read application file to find package name
+		packageName = ""
+		f = open("/home/vagrant/python/Master---Thesis/apps/floodlight/"+applicationName , "r")
+                for line in f.readlines():
+                         if line.startswith('package') :
+                                packageName = line.split()[1]
+				break
+                f.close()
+
+		directory = packageName.split(".")
+		self.f = ""
+		os.chdir(config['home']+floodlight_application_runner.codeDir)
+		for folder in directory:
+			#print config['home']+codeDir+"/"+folder
+			if os.path.isdir(config['home']+floodlight_application_runner.codeDir+self.f+"/"+folder) == True:
+				self.f = self.f + "/" + folder
+				os.chdir(config['home']+floodlight_application_runner.codeDir+self.f+"/")
+			else:
+				if folder.endswith(";"):
+					folder = folder[:-1]
+					
+				os.makedirs(config['home']+floodlight_application_runner.codeDir+self.f+"/"+folder)
+				self.f = self.f + "/" + folder
+				os.chdir(config['home']+floodlight_application_runner.codeDir+self.f+"/")
+			
+		shutil.copy('/home/vagrant/python/Master---Thesis/apps/floodlight/'+applicationName , os.getcwd() )			
+		
+		file_path = config['home']+floodlight_application_runner.modulesFilePath+floodlight_application_runner.moduleFile
+	        if os.path.exists(file_path):
+                        os.rename(file_path , file_path+"_old")	
+
+		shutil.copy('/home/vagrant/python/Master---Thesis/apps/floodlight/'+floodlight_application_runner.moduleFile , config['home']+floodlight_application_runner.modulesFilePath )
 		os.chdir(config['home'])
-		compileProcess = subprocess.Popen(["ant" , "run"] , shell=False , stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
+		#compile floodlight and wait
+		compileProcess = subprocess.Popen(["ant"] , shell=False , stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
+		compileProcess.communicate()
+		#run foodlight
+		runProcess = subprocess.Popen(["java","-jar","target/floodlight.jar","-cf", floodlight_application_runner.configFile] , shell=False , stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
+		#wait until floodlight controller listens on port#6653
 		while True:
+                        if controller.check_port(int(config['port'])) == 0:
+                                break
+                        else:
+                                time.sleep(0.1)
+                
+
+		'''while True:
                         output = compileProcess.stdout.readline()
                         if output == '' and compileProcess.poll() is not None:
                                break
@@ -41,17 +98,23 @@ class floodlight_application_runner:
                                 line =  output.strip()
 				if line.endswith("Starting DebugServer on :6655"):
 					break
-                                
+                '''                
 		#time.sleep(1)
                 #process = subprocess.Popen("java -jar target/floodlight.jar", shell=False, stdout=subprocess.PIPE)
                 time.sleep(1)
 
 	def stopApp(self):
 		#print "stopping application"
-		filePath = self.home+"/src/main/resources/floodlightdefault.properties"
-		os.remove(filePath)
-		myFile = open(filePath, "w" , 0)
-		myFile.write(self.old_file)
-		myFile.close()
-		shutil.rmtree(self.home+"/src/main/java/net/floodlightcontroller/"+self.applicationNameLower+"/")
+		#filePath = self.home+"/src/main/resources/floodlightdefault.properties"
+		#os.remove(filePath)
+		#myFile = open(filePath, "w" , 0)
+		#myFile.write(self.old_file)
+		#myFile.close()
+		file_path = self.home+floodlight_application_runner.modulesFilePath+floodlight_application_runner.moduleFile
+                if os.path.exists(file_path):
+                        os.remove(file_path)
+
+		if os.path.exists(file_path+"_old"):
+                        os.rename(file_path+"_old" , file_path)
+		shutil.rmtree(self.home+floodlight_application_runner.codeDir+self.f)
 		

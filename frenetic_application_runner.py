@@ -4,7 +4,8 @@ import shlex
 import os
 import signal
 import time
-class frenetic_application_runner:
+from application_runner import application_runner
+class frenetic_application_runner(application_runner):
 
 	def runApp(self , applicationName , config):
 		os.chdir("/home/vagrant/python/Master---Thesis/apps/frenetic")

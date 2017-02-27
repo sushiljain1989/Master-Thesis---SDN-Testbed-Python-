@@ -69,7 +69,7 @@ public class Hub implements IFloodlightModule, IOFMessageListener {
 	System.out.println("Packet Received");
 	OFMessage outMessage;
     	HubType ht = HubType.USE_PACKET_OUT;
-    	switch (ht) {
+    	/*switch (ht) {
     	case USE_FLOW_MOD:
             outMessage = createHubFlowMod(sw, msg);
             break;
@@ -77,7 +77,8 @@ public class Hub implements IFloodlightModule, IOFMessageListener {
     	case USE_PACKET_OUT:
             outMessage = createHubPacketOut(sw, msg);
             break;
-    	}
+    	}*/
+        outMessage = createHubPacketOut(sw, msg);
         sw.write(outMessage);
         
         return Command.CONTINUE;

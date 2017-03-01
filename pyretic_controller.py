@@ -18,16 +18,19 @@ class pyretic_controller(controller):
 
         def stopController(self):
                 print "stopping controller"
-                #print self.port
-                cmd = 'lsof -t -i:{0}'.format(self.port)
-                cmd2 = 'lsof -t -i:{0}'.format(41414)
-                pid = subprocess.check_output(cmd, shell=True)
-                pid = int(pid)
-		pid2 = subprocess.check_output(cmd2, shell=True)
-		#pid2 = int(pid2)
-		pid2 = pid2.replace('\n',' ')
-                print pid2
-                killcmd = 'kill -9 {0}'.format(pid)
-                killcmd2 = 'kill -9 {0}'.format(pid2)
-                os.system(killcmd)
-                os.system(killcmd2)
+                '''#print self.port
+		try:
+                	cmd = 'lsof -t -i:{0}'.format(self.port)
+               
+                	pid = subprocess.check_output(cmd, shell=True)
+                	pid = int(pid)
+			killcmd = 'kill -9 {0}'.format(pid)
+			os.system(killcmd)	
+			
+			cmd2 = 'lsof -t -i:{0}'.format(41414)
+			pid2 = subprocess.check_output(cmd2, shell=True)
+			pid2 = pid2.replace('\n',' ')
+                	killcmd2 = 'kill -9 {0}'.format(pid2)
+                	os.system(killcmd2)
+		except subprocess.CalledProcessError, e:
+			print e.output'''

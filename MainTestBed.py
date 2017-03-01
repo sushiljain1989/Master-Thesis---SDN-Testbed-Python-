@@ -12,6 +12,7 @@ import threading
 from controller import controller
 from application_runner import application_runner
 from test import test
+from TestSuit import testsuite
 def threaded(f):
     '''
     a threading decorator
@@ -199,21 +200,20 @@ class MainTestBed():
 
 if __name__ == '__main__':
    resultsDict = {}
-   
    obj = MainTestBed()
    #print "hello"
    #exit(0)
    #portnIP = obj.getIPnPort(controllerName)
    #controllers = ["nettle","ryu","frenetic" , "pyretic" , "kinetic" , "floodlight"]
-   controllers = ["frenetic"]
-   applications = ["nettle_Main.hs","ryu_L2Switch.py","frenetic_frenetic_app.py" , "pyretic_pyretic_app.py" , "kinetic_kinetic_app.py" , "floodlight_Hub.java"]
+   #controllers = ["frenetic"]
+   #applications = ["nettle_Main.hs","ryu_L2Switch.py","frenetic_frenetic_app.py" , "pyretic_pyretic_app.py" , "kinetic_kinetic_app.py" , "floodlight_Hub.java"]
    #testCases = ["test_flow_rules" , "test_pingall"]
-   testCases = ["test_flowrules"]
+   #testCases = ["test_flowrules"]
    outputWriters = ["json_writer"]
    networkTopoName = "SimpleTopo"
    #mininetProcess = obj.runMininet(networkTopoName , networkTopoName, portnIP)
    #is_running = False;
-   for controllerName in controllers:
+   '''for controllerName in controllers:
         controllerObject = obj.getControllerObject(controllerName)
    	if not isinstance(controllerObject, controller):
                 print controllerName +" is not an instance of controller"
@@ -241,34 +241,63 @@ if __name__ == '__main__':
 	print "There should be atleast one controller, one application and one test case \n"
 	print "Exiting......."
 	sys.exit(-1)
-
-   for controllerName in controllers:
+   '''
+   result = {}
+   controllers = testsuite()
+   for key in controllers:
+	controllerName = key
 	portnIP = obj.getIPnPort(controllerName)
 	controllerObject = obj.getControllerObject(controllerName)
 	controllerObject.runController(portnIP)
-	for testCaseName in testCases:
-		testCaseObject = obj.getTestCaseObject(testCaseName)
-                testCaseObject.execute(config = portnIP )
+	testCases = controllers[key]
+	for key in testCases:
+		testCaseName = key
+		#testCaseObject = obj.getTestCaseObject(testCaseName)
+                #testCaseObject.execute(config = portnIP )
+		applications = testCases[key]
 		for applicationName in applications:
+			testCaseObject = obj.getTestCaseObject(testCaseName)
+                	testCaseObject.execute(config = portnIP )
 			if applicationName.startswith(controllerName+"_"):
 				l = applicationName.split("_")
 				l.pop(0)
 				applicationName = "_".join(l)
 				appRunnerObject = obj.getAppRunnerObject(controllerName)
    				appRunnerObject.runApp(applicationName , portnIP)
+				print "running mininet"
 				mininetProcess = obj.runMininet(networkTopoName , networkTopoName, portnIP)
 				#obj.generateTraffic(mininetProcess)
 				appRunnerObject.stopApp()
 				obj.stopMininet(mininetProcess)
-   		result = testCaseObject.result()
+				print "stopping mininet"
+   			testappresult = testCaseObject.result()
+			if controllerName in result and testCaseName in result[controllerName]:
+				testcaseresult = result[controllerName][testCaseName]
+				testcaseresult[applicationName] = testappresult
+				result[controllerName][testCaseName] = testcaseresult
+			else :
+				testCaseResult = {applicationName : testappresult}
+				if controllerName in result:
+					if testCaseName in result[controllerName]:
+						tcr = result[controllerName][testCaseName]
+						tcr[applicationName] = testappresult
+						result[controllerName][testCaseName] = tcr
+					else:
+						result[controllerName][testCaseName] = {}
+						result[controllerName][testCaseName] = testCaseResult
+				else:
+					result[controllerName] = {}
+					result[controllerName][testCaseName] = testCaseResult
+					#result[controllerName][testCaseName] = {applicationName : testappresult}
+
 		#print result #time.sleep(5)
-		resultDict = {}
-   		resultDict["controller"] = controllerName
-   		resultDict["testcase"] = testCaseName
-   		resultDict["result"] = result
+		#resultDict = {}
+   		#resultDict["controller"] = controllerName
+   		#resultDict["testcase"] = testCaseName
+   		#resultDict["result"] = result
 		for writerName in outputWriters:
 			writerObject = obj.getOutputWriteObject(writerName)
-   			writerObject.write(resultDict)
+   			writerObject.write(result)
    	controllerObject.stopController()
 
    

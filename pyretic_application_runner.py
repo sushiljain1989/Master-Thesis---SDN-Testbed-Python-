@@ -8,9 +8,9 @@ import time
 from controller import controller
 class pyretic_application_runner(application_runner):
 
-        def runApp(self , applicationName , config):
+        def runApp(self , applicationName , config, testbedhome):
 		self.port = config['port']
-                os.chdir("/home/vagrant/python/Master---Thesis/apps/pyretic")
+                os.chdir(testbedhome+"apps/pyretic")
                 shutil.copy(applicationName , config['home']+'/pyretic/modules')
 		os.chdir(config['home'])
 		process = subprocess.Popen(["pyretic.py" , "-m" , "p0" , "pyretic.modules."+applicationName.split(".")[0] ], shell=False, stdout=subprocess.PIPE)

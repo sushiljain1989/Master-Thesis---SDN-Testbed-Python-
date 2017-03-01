@@ -8,13 +8,14 @@ from application_runner import application_runner
 from controller import controller
 class floodlight_application_runner(application_runner):
 
-	configFilePath = "/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties"
+	configFilePath = "apps/floodlight/floodlightdefault.properties"
 	modulesFilePath = "/src/main/resources/META-INF/services/"
 	moduleFile = "net.floodlightcontroller.core.module.IFloodlightModule"
 	codeDir = "/src/main/java"
-	configFile = "/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties"
-	def runApp(self , applicationName , config):
+	configFile = "apps/floodlight/floodlightdefault.properties"
+	def runApp(self , applicationName , config, testbedhome):
 		self.home = config['home']
+		self.testbedhome = testbedhome
 		#configFile = "/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties"
         	#modulesFilePath = "/src/main/resources/META-INF/services/"
         	#moduleFile = "net.floodlightcontroller.core.module.IFloodlightModule"
@@ -46,7 +47,7 @@ class floodlight_application_runner(application_runner):
 		os.chdir(config['home'])'''
 		#read application file to find package name
 		packageName = ""
-		f = open("/home/vagrant/python/Master---Thesis/apps/floodlight/"+applicationName , "r")
+		f = open(self.testbedhome+"apps/floodlight/"+applicationName , "r")
                 for line in f.readlines():
                          if line.startswith('package') :
                                 packageName = line.split()[1]
@@ -69,19 +70,19 @@ class floodlight_application_runner(application_runner):
 				self.f = self.f + "/" + folder
 				os.chdir(config['home']+floodlight_application_runner.codeDir+self.f+"/")
 			
-		shutil.copy('/home/vagrant/python/Master---Thesis/apps/floodlight/'+applicationName , os.getcwd() )			
+		shutil.copy(self.testbedhome+'apps/floodlight/'+applicationName , os.getcwd() )			
 		
 		file_path = config['home']+floodlight_application_runner.modulesFilePath+floodlight_application_runner.moduleFile
 	        if os.path.exists(file_path):
                         os.rename(file_path , file_path+"_old")	
 
-		shutil.copy('/home/vagrant/python/Master---Thesis/apps/floodlight/'+floodlight_application_runner.moduleFile , config['home']+floodlight_application_runner.modulesFilePath )
+		shutil.copy(self.testbedhome+'apps/floodlight/'+floodlight_application_runner.moduleFile , config['home']+floodlight_application_runner.modulesFilePath )
 		os.chdir(config['home'])
 		#compile floodlight and wait
 		compileProcess = subprocess.Popen(["ant"] , shell=False , stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
 		compileProcess.communicate()
 		#run foodlight
-		runProcess = subprocess.Popen(["java","-jar","target/floodlight.jar","-cf", floodlight_application_runner.configFile] , shell=False , stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
+		runProcess = subprocess.Popen(["java","-jar","target/floodlight.jar","-cf", self.testbedhome+floodlight_application_runner.configFile] , shell=False , stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
 		#wait until floodlight controller listens on port#6653
 		while True:
                         if controller.check_port(int(config['port'])) == 0:

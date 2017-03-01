@@ -12,7 +12,7 @@ class test_flowrules(test):
 				time.sleep(1)
 			else: 
 				break
-		f = open("/home/vagrant/python/Master---Thesis/my.log" , "r")
+		f = open(self.testbedname+"my.log" , "r")
 		#print "file opened"
                 for line in f.readlines():
 			#print "Line : "+line
@@ -21,13 +21,15 @@ class test_flowrules(test):
 			
 		f.close()
 		#print "file closed"
-		return count
+		result = {"flow rules" : count}
+		return result
 		
 
-	def execute(self , proces = None, config = None):
+	def execute(self, testbedname, proces = None, config = None):
 		#stdout,stderr = process.communicate("pingall")
 		#print stderr
-		self.process = subprocess.Popen(["sudo timeout "+str(config['duration'])+" tshark -i lo -d tcp.port=="+config['port']+",openflow -V > /home/vagrant/python/Master---Thesis/my.log"],shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+		self.testbedname = testbedname
+		self.process = subprocess.Popen(["sudo timeout "+str(config['duration'])+" tshark -i lo -d tcp.port=="+config['port']+",openflow -V > "+self.testbedname+"my.log"],shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
                 #process.expect(pexpect.EOF)
                 #stdout,stderr = process.communicate("pingall")
                 #print stdout

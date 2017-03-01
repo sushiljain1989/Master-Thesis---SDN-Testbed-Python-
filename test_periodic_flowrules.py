@@ -18,7 +18,7 @@ class test_periodic_flowrules(test):
 			else: 
 				break
 		'''
-		f = open("/home/vagrant/python/Master---Thesis/"+switchI+".log" , "r")
+		f = open(self.testbedname+switchI+".log" , "r")
 		#print "file opened"
 		numRules = 0
 		rulesList = []
@@ -35,10 +35,11 @@ class test_periodic_flowrules(test):
 		return rulesList
 		
 
-	def execute(self , proces = None, config = None):
+	def execute(self, testbedname, proces = None, config = None):
 		#stdout,stderr = process.communicate("pingall")
 		#print stderr
-		self.process = subprocess.Popen(["sudo timeout "+str(config['duration'])+" tshark -i lo -d tcp.port=="+config['port']+",openflow -V > /home/vagrant/python/Master---Thesis/my.log"],shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+		self.testbedname = testbedname
+		self.process = subprocess.Popen(["sudo timeout "+str(config['duration'])+" tshark -i lo -d tcp.port=="+config['port']+",openflow -V > "+self.testbedname+"my.log"],shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
                 #process.expect(pexpect.EOF)
                 #stdout,stderr = process.communicate("pingall")
                 #print stdout

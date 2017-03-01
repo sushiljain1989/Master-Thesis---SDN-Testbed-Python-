@@ -13,6 +13,8 @@ from controller import controller
 from application_runner import application_runner
 from test import test
 from TestSuit import testsuite
+
+testbedhome = '/home/vagrant/python/Master---Thesis/'
 def threaded(f):
     '''
     a threading decorator
@@ -25,14 +27,15 @@ def threaded(f):
 def runovsOfctlPeriodically(switchI):
                 #switchI = "s1"
 		#print switchI
-		file_path = "/home/vagrant/python/Master---Thesis/"+switchI+".log"
+		file_path = testbedhome+switchI+".log"
+		sys.exit(-1)
 		if os.path.exists(file_path):
 			os.remove(file_path)
                 waitTime = 60.0
                 spentTime = 0.0
                 while True:
                         if switchI in netifaces.interfaces():
-                                process = subprocess.Popen(["sudo ovs-ofctl dump-flows "+switchI+" >> /home/vagrant/python/Master---Thesis/"+switchI+".log"], shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+                                process = subprocess.Popen(["sudo ovs-ofctl dump-flows "+switchI+" >> "+file_path], shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
                                 time.sleep(0.1)
                                 spentTime+=0.1
                                 if waitTime <= spentTime:
@@ -46,7 +49,7 @@ class MainTestBed():
 	def getIPnPort(self,controllerName):
 
 		config = ConfigParser.ConfigParser()
-		config.read("/home/vagrant/python/Master---Thesis/config.ini")
+		config.read(testbedhome+"config.ini")
 		options = config.options(controllerName)
 		dictionary = dict()
 		for option in options:
@@ -75,7 +78,7 @@ class MainTestBed():
 		#fd = sys.stdin.fileno()
 		#fl = fcntl.fcntl(fd , fcntl.F_GETFL)
 		#fcntl.fcntl(fd , fcntl.F_SETFL , fl | os.O_NONBLOCK)
-		process = subprocess.Popen("sudo mn --custom /home/vagrant/python/Master---Thesis/"+fileName+".py --topo="+topoName+" --controller=remote,ip="+configs['ip']+",port="+configs['port'],shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT , preexec_fn=os.setsid)
+		process = subprocess.Popen("sudo mn --custom "+testbedhome+fileName+".py --topo="+topoName+" --controller=remote,ip="+configs['ip']+",port="+configs['port'],shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT , preexec_fn=os.setsid)
 		#process.expect(pexpect.EOF)
 		#stdout,stderr = process.communicate("pingall")
 		#print stdout
@@ -201,6 +204,12 @@ class MainTestBed():
 if __name__ == '__main__':
    resultsDict = {}
    obj = MainTestBed()
+
+   '''portnIP = obj.getIPnPort("frenetic")
+   print portnIP
+   networkTopoName = "SimpleTopo"
+   obj.runMininet(networkTopoName , networkTopoName, portnIP)
+   sys.exit(-1)'''
    #print "hello"
    #exit(0)
    #portnIP = obj.getIPnPort(controllerName)
@@ -257,13 +266,13 @@ if __name__ == '__main__':
 		applications = testCases[key]
 		for applicationName in applications:
 			testCaseObject = obj.getTestCaseObject(testCaseName)
-                	testCaseObject.execute(config = portnIP )
+                	testCaseObject.execute(testbedhome, config = portnIP )
 			if applicationName.startswith(controllerName+"_"):
 				l = applicationName.split("_")
 				l.pop(0)
 				applicationName = "_".join(l)
 				appRunnerObject = obj.getAppRunnerObject(controllerName)
-   				appRunnerObject.runApp(applicationName , portnIP)
+   				appRunnerObject.runApp(applicationName , portnIP, testbedhome)
 				print "running mininet"
 				mininetProcess = obj.runMininet(networkTopoName , networkTopoName, portnIP)
 				#obj.generateTraffic(mininetProcess)

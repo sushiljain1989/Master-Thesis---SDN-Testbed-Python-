@@ -5,7 +5,7 @@ class application_runner:
 	__metaclass__ = ABCMeta
 	
 	@abstractmethod
-	def runApp(self , applicationName , config):
+	def runApp(self , applicationName , config, testbedhome):
 		pass	
 	
 	@abstractmethod

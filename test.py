@@ -9,5 +9,5 @@ class test:
 		pass
 
 	@abstractmethod
-	def execute(self , proces = None, config = None):
+	def execute(self, testbedname, proces = None, config = None):
 		pass

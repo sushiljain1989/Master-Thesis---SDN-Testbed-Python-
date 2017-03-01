@@ -12,7 +12,7 @@ class test_packets(test):
 				time.sleep(1)
 			else: 
 				break
-		f = open("/home/vagrant/python/Master---Thesis/my.log" , "r")
+		f = open(self.testbedname+"my.log" , "r")
 		#print "file opened"
 		incoming_pkts = 0
 		outgoing_pkts = 0
@@ -29,10 +29,11 @@ class test_packets(test):
 		return packets
 		
 
-	def execute(self , proces = None, config = None):
+	def execute(self, testbedname, proces = None, config = None):
 		#stdout,stderr = process.communicate("pingall")
 		#print stderr
-		self.process = subprocess.Popen(["sudo timeout "+str(config['duration'])+" tshark -i lo -d tcp.port=="+config['port']+",openflow > /home/vagrant/python/Master---Thesis/my.log"],shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+		self.testbedname = testbedname
+		self.process = subprocess.Popen(["sudo timeout "+str(config['duration'])+" tshark -i lo -d tcp.port=="+config['port']+",openflow > "+self.testbedname+"my.log"],shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
                 #process.expect(pexpect.EOF)
                 #stdout,stderr = process.communicate("pingall")
                 #print stdout

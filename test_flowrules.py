@@ -4,6 +4,11 @@ import subprocess
 from test import test
 class test_flowrules(test):
 	
+	def __init__(self, testbedpath, config):
+		self.testbedname = testbedpath
+		#print config
+		self.config = config	
+
 	def result(self):
 		count = 0
 		while True:
@@ -25,11 +30,12 @@ class test_flowrules(test):
 		return result
 		
 
-	def execute(self, testbedname, proces = None, config = None):
+	def execute(self, proces = None, config = None):
 		#stdout,stderr = process.communicate("pingall")
 		#print stderr
-		self.testbedname = testbedname
-		self.process = subprocess.Popen(["sudo timeout "+str(config['duration'])+" tshark -i lo -d tcp.port=="+config['port']+",openflow -V > "+self.testbedname+"my.log"],shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+		#self.testbedname = testbedname
+		#print self.config
+		self.process = subprocess.Popen(["sudo timeout "+str(self.config['duration'])+" tshark -i lo -d tcp.port=="+self.config['port']+",openflow -V > "+self.testbedname+"my.log"],shell=True,stdin=subprocess.PIPE , stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
                 #process.expect(pexpect.EOF)
                 #stdout,stderr = process.communicate("pingall")
                 #print stdout

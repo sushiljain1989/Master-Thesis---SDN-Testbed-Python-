@@ -27,8 +27,8 @@ class FLTestCase(TestCase):
         self.apprunner.setConfigFile("/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties")
         self.apprunner.setModuleFile("CHANGE")
         self.apprunner.setTestBedModuleFile("CHANGE")
-        print self.dictionary
-	print TestCase.testBedHomePath
+        #print self.dictionary
+	#print TestCase.testBedHomePath
 	self.apprunner.runApp(applicationName, self.dictionary, TestCase.testBedHomePath)
 
 

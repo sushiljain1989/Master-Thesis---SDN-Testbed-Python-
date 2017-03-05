@@ -4,7 +4,6 @@ from test import test
 class MacLearningTestSuite(TestSuite):
 
     def __init__(self, applicationName):
-        #super(TestSuite, self).__init__(applicationName)
         TestSuite.__init__(self, applicationName)
 
     def run(self):

@@ -7,11 +7,15 @@ import time
 from application_runner import application_runner
 class frenetic_application_runner(application_runner):
 
+	def __init__(self, config, testBedHomePath):
+        	self.config = config
+        	self.testbedhome = testBedHomePath
+
 	def runApp(self , applicationName , config, testbedhome):
-		os.chdir(testbedhome+"apps/frenetic/")
-		print os.getcwd()
-		print applicationName
-		self.process = subprocess.Popen(["python" , applicationName], shell=False, stdout=subprocess.PIPE , preexec_fn=os.setsid)
+		os.chdir(self.testbedhome+"apps/frenetic/")
+		#print os.getcwd()
+		#print applicationName
+		self.process = subprocess.Popen(["python" , self.config['appsdir']+applicationName], shell=False, stdout=subprocess.PIPE , preexec_fn=os.setsid)
 		#out, err = process.communicate(commands)
 		#print out
 		#self.process = process

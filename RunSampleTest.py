@@ -1,4 +1,8 @@
 from FLTestCase import FLTestCase
+from FreneticTestCase import FreneticTestCase
+from PyreticTestCase import PyreticTestCase
+from KineticTestCase import KineticTestCase
+from RyuTestCase import RyuTestCase
 from MacLearningTestSuite import MacLearningTestSuite
 from test_flowrules import test_flowrules
 testbedpath = "/home/vagrant/python/Master---Thesis/"
@@ -12,7 +16,7 @@ case.setTestBedHome(testBedHomePath=testbedpath)
 
 sdntest = test_flowrules(testbedpath, pnip)
 
-suite = MacLearningTestSuite("MACLearn.java")
+suite = MacLearningTestSuite("Hub.java")
 suite.addTestCase(case)
 suite.addControllerTest(sdntest)
 suite.run()

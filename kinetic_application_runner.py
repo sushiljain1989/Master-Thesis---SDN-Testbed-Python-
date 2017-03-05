@@ -8,13 +8,17 @@ from application_runner import application_runner
 from controller import controller
 class kinetic_application_runner(application_runner):
 
-        def runApp(self , applicationName , config, testbedhome):
-                os.chdir(testbedhome+"apps/kinetic/")
-                shutil.copy(applicationName , config['home']+'/pyretic/kinetic/apps')
-		os.chdir(config['home'])
+        def __init__(self, config, testBedHomePath):
+        	self.config = config
+        	self.testbedhome = testBedHomePath
+
+	def runApp(self , applicationName , config, testbedhome):
+                #os.chdir(self.testbedhome+"apps/kinetic/")
+                shutil.copy(self.config['appsdir']+applicationName , self.config['home']+'/pyretic/kinetic/apps')
+		os.chdir(self.config['home'])
 		process = subprocess.Popen(["pyretic.py" , "-m" , "p0" , "pyretic.kinetic.apps."+applicationName.split(".")[0] ], shell=False, stdout=subprocess.PIPE)
                 while True:
-                        if controller.check_port(int(config['port'])) == 0:
+                        if controller.check_port(int(self.config['port'])) == 0:
                                 break
                         else:
                                 time.sleep(0.1)

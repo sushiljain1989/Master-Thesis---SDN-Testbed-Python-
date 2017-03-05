@@ -8,14 +8,19 @@ import time
 from controller import controller
 class pyretic_application_runner(application_runner):
 
-        def runApp(self , applicationName , config, testbedhome):
-		self.port = config['port']
-                os.chdir(testbedhome+"apps/pyretic")
-                shutil.copy(applicationName , config['home']+'/pyretic/modules')
-		os.chdir(config['home'])
+	def __init__(self, config, testBedHomePath):
+        	self.config = config
+        	self.testbedhome = testBedHomePath
+        
+
+	def runApp(self , applicationName , config, testbedhome):
+		#self.port = self.config['port']
+                #os.chdir(self.testbedhome+"apps/pyretic")
+                shutil.copy(self.config['appsdir']+applicationName , self.config['home']+'/pyretic/modules')
+		os.chdir(self.config['home'])
 		process = subprocess.Popen(["pyretic.py" , "-m" , "p0" , "pyretic.modules."+applicationName.split(".")[0] ], shell=False, stdout=subprocess.PIPE)
                 while True:
-                        if controller.check_port(int(config['port'])) == 0:
+                        if controller.check_port(int(self.config['port'])) == 0:
                                 break
                         else:
                                 time.sleep(0.1)
@@ -27,7 +32,7 @@ class pyretic_application_runner(application_runner):
         def stopApp(self):
                 print "stopping application"
 		try:
-                        cmd = 'lsof -t -i:{0}'.format(self.port)
+                        cmd = 'lsof -t -i:{0}'.format(self.config['port'])
 
                         pid = subprocess.check_output(cmd, shell=True)
                         pid = int(pid)

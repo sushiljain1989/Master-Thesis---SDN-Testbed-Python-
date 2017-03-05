@@ -8,14 +8,16 @@ from application_runner import application_runner
 from controller import controller
 class ryu_application_runner(application_runner):
 
-        def runApp(self , applicationName , config, testbedhome):
-                os.chdir(testbedhome+"apps/ryu/")
-                #shutil.copy(applicationName , config['home']+'/pyretic/modules')
-		#os.chdir(config['home'])
+        def __init__(self, config, testBedHomePath):
+       		self.config = config
+        	self.testbedhome = testBedHomePath
+
+	def runApp(self , applicationName , config, testbedhome):
+                os.chdir(self.config['appsdir'])
 		process = subprocess.Popen(["ryu-manager" , applicationName ], shell=False, stdout=subprocess.PIPE)
                 #time.sleep(3)
 		while True:
-                        if controller.check_port(int(config['port'])) == 0:
+                        if controller.check_port(int(self.config['port'])) == 0:
                                 break
                         else:
                                 time.sleep(0.1)

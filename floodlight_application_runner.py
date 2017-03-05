@@ -66,7 +66,7 @@ class floodlight_application_runner(application_runner):
         os.chdir(config['home'])'''
         # read application file to find package name
         packageName = ""
-        f = open(self.testbedhome + "apps/floodlight/" + applicationName, "r")
+        f = open(self.config['appsdir'] + applicationName, "r")
         for line in f.readlines():
             if line.startswith('package'):
                 packageName = line.split()[1]
@@ -75,30 +75,30 @@ class floodlight_application_runner(application_runner):
 
         directory = packageName.split(".")
         self.f = ""
-        os.chdir(config['home'] + self.codeDir)
+        os.chdir(self.config['home'] + self.codeDir)
         for folder in directory:
             # print config['home']+codeDir+"/"+folder
             if os.path.isdir(config['home'] + self.codeDir + self.f + "/" + folder) == True:
                 self.f = self.f + "/" + folder
-                os.chdir(config['home'] + self.codeDir + self.f + "/")
+                os.chdir(self.config['home'] + self.codeDir + self.f + "/")
             else:
                 if folder.endswith(";"):
                     folder = folder[:-1]
 
-                os.makedirs(config['home'] + self.codeDir + self.f + "/" + folder)
+                os.makedirs(self.config['home'] + self.codeDir + self.f + "/" + folder)
                 self.f = self.f + "/" + folder
-                os.chdir(config['home'] + self.codeDir + self.f + "/")
+                os.chdir(self.config['home'] + self.codeDir + self.f + "/")
 
-        shutil.copy(self.testbedhome + 'apps/floodlight/' + applicationName, os.getcwd())
+        shutil.copy(self.config['appsdir'] + applicationName, os.getcwd())
 
-        file_path = config['home'] + self.moduleFile
+        file_path = self.config['home'] + self.moduleFile
         if os.path.exists(file_path):
             os.rename(file_path, file_path + "_old")
 
         shutil.copy(self.testBedModuleFileForFL,
-                    config['home'] + self.moduleFilePath)
-        os.chdir(config['home'])
-	print os.getcwd()
+                    self.config['home'] + self.moduleFilePath)
+        os.chdir(self.config['home'])
+	#print os.getcwd()
         # compile floodlight and wait
         compileProcess = subprocess.Popen(["ant"], shell=False, stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
         compileProcess.communicate()
@@ -110,7 +110,7 @@ class floodlight_application_runner(application_runner):
         print "executed command java -jar target/floodlight...."
 	# wait until floodlight controller listens on port#6653
         while True:
-            if controller.check_port(int(config['port'])) == 0:
+            if controller.check_port(int(self.config['port'])) == 0:
                 break
             else:
                 time.sleep(0.1)

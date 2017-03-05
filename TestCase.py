@@ -37,6 +37,7 @@ def runovsOfctlPeriodically(switchI):
                                 time.sleep(0.01)
 
 class TestCase():
+    #appsDir = ""
     controllerName = ""
     configFiles = {}
     mainConfigFile = ""
@@ -55,8 +56,15 @@ class TestCase():
             self.dictionary = dict()
             for option in options:
                 self.dictionary[option] = config.get(TestCase.controllerName, option)
-	    print self.dictionary
+	    #print self.dictionary
+	    sectionName = "misc"
+	    options = config.options(sectionName)
+	    for option in options:
+                self.dictionary[option] = config.get(sectionName, option)
 	    return self.dictionary
+
+    #def setAppsDir(self, appsDir=None):
+	#pass
 
     def additionalConfigFile(self, configFilePath=None, configFileName = None ):
         pass
@@ -131,7 +139,7 @@ class TestCase():
 
     def runTestCase(self,applicationName):
         self.readConfigFile(TestCase.mainConfigFile)
-        #if(len (TestCase.configFiles) == 0):
+	#if(len (TestCase.configFiles) == 0):
         self.startController()
         self.startApplication(applicationName)
         mnProcess = self.runMininet("SimpleTopo", "SimpleTopo", self.dictionary)

@@ -13,6 +13,8 @@ class MacLearningTestSuite(TestSuite):
             sdnTest.execute()
 
             for testCase in self.testCaseList:
-                testCase.runTestCase(self.applicationName)
+                #print testCase
+		testCase.setTopology(sdnTest.topoFileName, sdnTest.nwTopoName)
+		testCase.runTestCase(self.applicationName)
 
             print sdnTest.result()

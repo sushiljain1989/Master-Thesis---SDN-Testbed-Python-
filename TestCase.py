@@ -42,17 +42,16 @@ class TestCase():
     configFiles = {}
     mainConfigFile = ""
     testBedHomePath = ""
-    def readConfigFile(self , configFilePath = None):
+    def readConfigFile(self):
 
-        if configFilePath == None:
+        if TestCase.mainConfigFile == None or TestCase.mainConfigFile == "":
             raise Exception('Please provide absolute path for config.ini')
 
         else:
-            print "reading config file"
-            #return
-            config = ConfigParser.ConfigParser()
-            config.read(configFilePath)
-            options = config.options(TestCase.controllerName)
+            print TestCase.mainConfigFile
+	    config = ConfigParser.ConfigParser()
+            config.read(TestCase.mainConfigFile)
+	    options = config.options(TestCase.controllerName)
             self.dictionary = dict()
             for option in options:
                 self.dictionary[option] = config.get(TestCase.controllerName, option)
@@ -81,15 +80,20 @@ class TestCase():
     def stopController(self, additionalConfigFiles = None):
         pass
 
-    def runMininet(self, networkTopoName, fileName, configs):
-        bgThread = threading.Thread(target=runovsOfctlPeriodically, args=("s1",))
-        bgThread.daemon = True
-        bgThread.start()
+    def setTopology(self, topoFileName, nwTopoName):
+	self.topoFileName = topoFileName
+	self.nwTopoName = nwTopoName
+	
+
+    def runMininet(self, configs):
+        #bgThread = threading.Thread(target=runovsOfctlPeriodically, args=("s1",))
+        #bgThread.daemon = True
+        #bgThread.start()
         # print configs
         # fd = sys.stdin.fileno()
         # fl = fcntl.fcntl(fd , fcntl.F_GETFL)
         # fcntl.fcntl(fd , fcntl.F_SETFL , fl | os.O_NONBLOCK)
-        process = subprocess.Popen("sudo mn --custom " + TestCase.testBedHomePath + fileName + ".py --topo=" + networkTopoName + " --controller=remote,ip=" +configs['ip'] + ",port="+configs['port'], shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE,stderr=subprocess.STDOUT, preexec_fn=os.setsid)
+        process = subprocess.Popen("sudo mn --custom " + self.topoFileName+" --topo=" + self.nwTopoName + " --controller=remote,ip=" +configs['ip'] + ",port="+configs['port'], shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE,stderr=subprocess.STDOUT, preexec_fn=os.setsid)
         # process.expect(pexpect.EOF)
         # stdout,stderr = process.communicate("pingall")
         # print stdout
@@ -138,18 +142,13 @@ class TestCase():
         pass
 
     def runTestCase(self,applicationName):
-        self.readConfigFile(TestCase.mainConfigFile)
-	#if(len (TestCase.configFiles) == 0):
+	if not hasattr(self, 'topoFileName') or not hasattr(self, 'topoFileName'):
+		raise Exception('Please provide both network topology file and topology name')
+	if self.nwTopoName == None or self.nwTopoName == "" or self.topoFileName == None or self.topoFileName == "" :
+		raise Exception('Please provide both network topology file and topology name')
         self.startController()
         self.startApplication(applicationName)
-        mnProcess = self.runMininet("SimpleTopo", "SimpleTopo", self.dictionary)
+        mnProcess = self.runMininet(self.dictionary)
         self.stopApplication()
         self.stopMininet(mnProcess)
         self.stopController()
-        '''else :
-            self.startController(TestCase.configFiles)
-            self.startApplication(TestCase.configFiles)
-            mnProcess = self.runMininet("SimpleTopo", "SimpleTopo", TestCase.mainConfigFile)
-            self.stopApplication(TestCase.configFiles)
-            self.stopMininet(mnProcess)
-            self.stopController(TestCase.configFiles)'''

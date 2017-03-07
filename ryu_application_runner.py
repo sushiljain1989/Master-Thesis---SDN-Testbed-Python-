@@ -14,7 +14,7 @@ class ryu_application_runner(application_runner):
 
 	def runApp(self , applicationName , config, testbedhome):
                 os.chdir(self.config['appsdir'])
-		process = subprocess.Popen(["ryu-manager" , applicationName ], shell=False, stdout=subprocess.PIPE)
+		self.process = subprocess.Popen(["ryu-manager" , applicationName ], shell=False, stdout=subprocess.PIPE)
                 #time.sleep(3)
 		while True:
                         if controller.check_port(int(self.config['port'])) == 0:
@@ -26,4 +26,5 @@ class ryu_application_runner(application_runner):
 
 
         def stopApp(self):
+		time.sleep(int(self.config['duration']))
                 print "stopping application"

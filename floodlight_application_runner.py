@@ -10,11 +10,6 @@ from controller import controller
 
 class floodlight_application_runner(application_runner):
 
-    #modulesFilePath = "/src/main/resources/META-INF/services/"
-    #moduleFile = "net.floodlightcontroller.core.module.IFloodlightModule"
-    #codeDir = "/src/main/java"
-    #configFile = "apps/floodlight/floodlightdefault.properties"
-
     def __init__(self, config, testBedHomePath):
 	self.config = config
 	self.testbedhome = testBedHomePath
@@ -23,47 +18,17 @@ class floodlight_application_runner(application_runner):
         self.codeDir = codeDir
 
     def setModuleFile(self, moduleFile):
-        self.moduleFilePath = "/src/main/resources/META-INF/services/"
-        self.moduleFile = "net.floodlightcontroller.core.module.IFloodlightModule"
+        self.moduleFilePath = self.config['modulefilepath'] #/src/main/resources/META-INF/services/"
+        self.moduleFile =  self.config['modulefilename'] #"net.floodlightcontroller.core.module.IFloodlightModule"
 
     def setConfigFile(self, configFile):
         self.configFile = configFile
 
     def setTestBedModuleFile(self, testBedModuleFileForFL):
-        self.testBedModuleFileForFL = self.testbedhome + 'apps/floodlight/net.floodlightcontroller.core.module.IFloodlightModule'
+        self.testBedModuleFileForFL = testBedModuleFileForFL
 
     def runApp(self, applicationName, config, testbedhome):
         self.home = self.config['home']
-        #self.testbedhome = testbedhome
-        # configFile = "/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties"
-        # modulesFilePath = "/src/main/resources/META-INF/services/"
-        # moduleFile = "net.floodlightcontroller.core.module.IFloodlightModule"
-        # codeDir = "/src/main/java"
-
-        '''self.old_file = ""
-        new_file = ""
-        trace = 0
-        filePath = config['home']+"/src/main/resources/floodlightdefault.properties"
-        applicationNameLower = applicationName.split(".")[0].lower()
-        self.applicationNameLower = applicationNameLower
-        f = open(filePath , "r")
-        for line in f.readlines():
-                    self.old_file = self.old_file+line
-                    if line.startswith('net.floodlightcontroller.statistics.StatisticsCollector') and trace < 1:
-                            trace+=1
-                        line = line.strip() + ",net.floodlightcontroller."+applicationNameLower+"."+applicationName.split(".")[0]+"\n"
-                 new_file += line
-        #print new_file
-        f.close()
-        os.remove(filePath)
-        myFile = open(filePath , "w" , 0)
-        myFile.write(new_file)
-        myFile.close()
-        #exit(0)
-        os.chdir(config['home']+"/src/main/java/net/floodlightcontroller")
-        os.mkdir(applicationNameLower , 0755)
-                shutil.copy('/home/vagrant/python/Master---Thesis/apps/floodlight/'+applicationName , config['home']+'/src/main/java/net/floodlightcontroller/'+applicationNameLower+'/' )
-        os.chdir(config['home'])'''
         # read application file to find package name
         packageName = ""
         f = open(self.config['appsdir'] + applicationName, "r")
@@ -94,15 +59,13 @@ class floodlight_application_runner(application_runner):
         file_path = self.config['home'] + self.moduleFile
         if os.path.exists(file_path):
             os.rename(file_path, file_path + "_old")
-
+	#print "home: "+self.config['home']
+	#print "file path: "+self.moduleFilePath
         shutil.copy(self.testBedModuleFileForFL,
                     self.config['home'] + self.moduleFilePath)
         os.chdir(self.config['home'])
-	#print os.getcwd()
-        # compile floodlight and wait
         compileProcess = subprocess.Popen(["ant"], shell=False, stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
         compileProcess.communicate()
-	print "building done"
         # run foodlight
         runProcess = subprocess.Popen(["java", "-jar", "target/floodlight.jar", "-cf",
                                        self.configFile], shell=False,
@@ -115,26 +78,9 @@ class floodlight_application_runner(application_runner):
             else:
                 time.sleep(0.1)
 
-        '''while True:
-                        output = compileProcess.stdout.readline()
-                        if output == '' and compileProcess.poll() is not None:
-                               break
-                        if output:
-                                line =  output.strip()
-                if line.endswith("Starting DebugServer on :6655"):
-                    break
-                '''
-        # time.sleep(1)
-        # process = subprocess.Popen("java -jar target/floodlight.jar", shell=False, stdout=subprocess.PIPE)
         time.sleep(1)
 
     def stopApp(self):
-        # print "stopping application"
-        # filePath = self.home+"/src/main/resources/floodlightdefault.properties"
-        # os.remove(filePath)
-        # myFile = open(filePath, "w" , 0)
-        # myFile.write(self.old_file)
-        # myFile.close()
         file_path = self.home + self.moduleFilePath + self.moduleFile
         if os.path.exists(file_path):
             os.remove(file_path)

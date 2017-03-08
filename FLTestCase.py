@@ -24,9 +24,13 @@ class FLTestCase(TestCase):
         print "running application"
         self.apprunner = floodlight_application_runner(self.dictionary, TestCase.testBedHomePath)
         self.apprunner.setCodeDir("/src/main/java")
-        self.apprunner.setConfigFile("/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties")
-        self.apprunner.setModuleFile("CHANGE")
-        self.apprunner.setTestBedModuleFile("CHANGE")
+	print TestCase.configFiles
+	#load floodlightdefault.properties file from user-supplied location
+        self.apprunner.setConfigFile(TestCase.configFiles['floodlightdefault.properties'])
+	#location of module file in floodlight setup
+        self.apprunner.setModuleFile(TestCase.configFiles['net.floodlightcontroller.core.module.IFloodlightModule'])
+	#location of module loader file placed in apps or other directory
+        self.apprunner.setTestBedModuleFile(TestCase.configFiles['net.floodlightcontroller.core.module.IFloodlightModule'])
         #print self.dictionary
 	#print TestCase.testBedHomePath
 	self.apprunner.runApp(applicationName, self.dictionary, TestCase.testBedHomePath)
@@ -36,7 +40,7 @@ class FLTestCase(TestCase):
         print "stopping controller"
         self.flcontroller.stopController()
 
-    def setTestBedHome(self, testBedHomePath='/home/vagrant/python/Master---Thesis/'):
+    def setTestBedHome(self, testBedHomePath='./'):
         TestCase.testBedHomePath = testBedHomePath
 
     def additionalConfigFile(self, configFilePath=None, configFileName = None):

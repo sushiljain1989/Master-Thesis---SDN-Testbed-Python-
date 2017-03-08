@@ -125,6 +125,42 @@ class TestCase():
         # result = ""
         return process
 
+    def generateTraffic(self, mininetProcess):
+	runTime = 5
+        startTime = 1
+        #print "starting mail traffic"
+	'''time.sleep(1)
+        process.stdin.write("pingall \n")
+        process.stdin.flush()
+        time.sleep(0.5)
+        while True:
+            output = process.stdout.readline()
+            if output == '' and process.poll() is not None:
+                break
+            if "*** Results" in output.strip():
+                print output.strip()
+                break
+	'''
+	startTime = 1
+        while True:
+            if(startTime >= runTime):
+                break
+            mininetProcess.stdin.write("h1 nc h2 25 \n")
+            mininetProcess.stdin.flush()
+            startTime+=1
+            time.sleep(1)
+                
+	startTime = 1
+        print "starting http traffic"
+        while True:
+	    if(startTime >= runTime):
+		break
+            mininetProcess.stdin.write("h1 nc h2 80 \n")
+            mininetProcess.stdin.flush()
+            startTime+=1
+	    time.sleep(1)
+
+
     def stopMininet(self, process):
         # os.killpg(os.getpgid(process.pid), signal.SIGTERM)
         # time.sleep(1)

@@ -2,7 +2,7 @@ from abc import ABCMeta, abstractmethod
 import sys
 import traceback
 import importlib
-class test:
+class Test:
 	__metaclass__ = ABCMeta
 	
 	@abstractmethod

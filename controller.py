@@ -14,7 +14,7 @@ class controller:
 		pass
 	
 	@staticmethod
-	def check_port(port, ip='127.0.0.1'):
+	def checkPort(port, ip='127.0.0.1'):
 		sock = socket.socket(socket.AF_INET , socket.SOCK_STREAM)
 		sock.settimeout(0.5)
 		result = sock.connect_ex((ip,port))

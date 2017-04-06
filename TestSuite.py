@@ -1,22 +1,22 @@
 import sys
-from TestCase import  TestCase
-from test import test
+from Environment import Environment
+from Test import Test
+from DataWriter import DataWriter
 class TestSuite():
 
-    def __init__(self, applicationName):
-        self.applicationName = applicationName
-        self.testCaseList = []
+    def __init__(self):
+        self.testEnvList = []
         self.controllerTestList = []
 
 
-    def addTestCase(self , testCase):
-        if not isinstance(testCase, TestCase):
-            raise Exception('Please provide instance of TestCase')
+    def addTestCase(self , env):
+        if not isinstance(env, Environment):
+            raise Exception('Please provide instance of Environment')
         else:
-            self.testCaseList.append(testCase)
+            self.testEnvList.append(env)
 
     def addControllerTest(self , SDNTest):
-        if not isinstance(SDNTest, test):
+        if not isinstance(SDNTest, Test):
             raise Exception('Please provide instance of test class/subclass')
         else:
             self.controllerTestList.append(SDNTest)
@@ -24,3 +24,6 @@ class TestSuite():
     def run(self ):
             pass
 
+
+    def setDataFormat(self, writerObject):
+	self.writerObject = writerObject

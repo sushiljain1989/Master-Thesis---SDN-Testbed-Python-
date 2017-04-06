@@ -1,34 +1,38 @@
 #!/usr/bin/python
-from FLTestCase import FLTestCase
-from FreneticTestCase import FreneticTestCase
-from PyreticTestCase import PyreticTestCase
-from KineticTestCase import KineticTestCase
-from RyuTestCase import RyuTestCase
+from FloodLightEnvironment import FloodLightEnvironment
+from FreneticEnvironment import FreneticEnvironment
+from PyreticEnvironment import PyreticEnvironment
+from KineticEnvironment import KineticEnvironment
+from RyuEnvironment import RyuEnvironment
 from MacLearningTestSuite import MacLearningTestSuite
-from test_switch_flowrules import test_switch_flowrules
-from test_flowrules import test_flowrules
-from test_packets import test_packets
-from test_controller_packetin import test_controller_packetin
+from TestSwitchFlowrules import TestSwitchFlowrules
+from TestFlowrules import TestFlowrules
+from TestPackets import TestPackets
+from TestPacketIn import TestPacketIn
+from JSONWriter import JSONWriter 
 topoFileName = "/home/vagrant/SimpleTopo.py"
 nwTopoName = "SimpleTopo"
 testbedpath = "/home/vagrant/python/Master---Thesis/"
-case = FreneticTestCase("/home/vagrant/python/Master---Thesis/config.ini")
-#case.setTopology("/home/vagrant/SimpleTopo.py", "SimpleTopo")
-#case.additionalConfigFile(configFileName="floodlightdefault.properties",configFilePath="/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties")
-#case.additionalConfigFile(configFileName="net.floodlightcontroller.core.module.IFloodlightModule",
+env = RyuEnvironment("/home/vagrant/python/Master---Thesis/config.ini")
+env.setApplication("SimpleSwitch.py")
+#env.additionalConfigFile(configFileName="floodlightdefault.properties",configFilePath="/home/vagrant/python/Master---Thesis/apps/floodlight/floodlightdefault.properties")
+#env.additionalConfigFile(configFileName="net.floodlightcontroller.core.module.IFloodlightModule",
 #                          configFilePath="/home/vagrant/python/Master---Thesis/apps/floodlight/net.floodlightcontroller.core.module.IFloodlightModule")
-pnip = case.readConfigFile()
+pnip = env.readConfigFile()
 
-case.setTestBedHome(testBedHomePath=testbedpath)
+env.setTestBedHome(testBedHomePath=testbedpath)
 
 #sdntest1 = test_controller_packetin(testbedpath, pnip)
 #sdntest1.setTopology(topoFileName, nwTopoName)
 
-sdntest2 = test_switch_flowrules(testbedpath, pnip)
+sdntest2 = TestSwitchFlowrules(testbedpath, pnip)
 sdntest2.setTopology(topoFileName, nwTopoName)
 
-suite = MacLearningTestSuite("learning3.py")
-suite.addTestCase(case)
+outputFormat = JSONWriter()
+
+suite = MacLearningTestSuite()
+suite.addTestCase(env)
 #suite.addControllerTest(sdntest1)
 suite.addControllerTest(sdntest2)
+suite.setDataFormat(outputFormat)
 suite.run()

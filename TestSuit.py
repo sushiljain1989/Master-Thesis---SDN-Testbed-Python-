@@ -10,9 +10,9 @@ def testsuite():
     pyretic_applications = ['hub.py', 'mac_learner.py']
 
     pyretic_testCases = {'test_flowrules': ['pyretic_hub.py'] } #, 'test_packets': ['pyretic_mac_learner.py']}
-    floodlight_testCases = {'test_packets': ['floodlight_Hub.java']}
+    floodlight_testCases = {'test_flowrules': ['floodlight_MACLearn.java']}
     kinetic_testCases = {'test_flowrules': ['kinetic_kinetic_app.py']}
     ryu_testCases = {'test_flowrules': ['ryu_SimpleSwitch.py']}
     #controllers = {'floodlight':floodlight_testCases, 'ryu':ryu_testCases, 'kinetic':kinetic_testCases}
-    controllers = {'frenetic':frenetic_testCases}
+    controllers = {'floodlight':floodlight_testCases}
     return controllers

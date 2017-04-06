@@ -1,10 +1,11 @@
 import sys
 from TestSuite import TestSuite
-from test import test
+from Test import Test
+from DataWriter import DataWriter
 class MacLearningTestSuite(TestSuite):
 
-    def __init__(self, applicationName):
-        TestSuite.__init__(self, applicationName)
+    def __init__(self):
+        TestSuite.__init__(self)
 
     def run(self):
         print "running MacLearning Test"
@@ -12,9 +13,9 @@ class MacLearningTestSuite(TestSuite):
         for sdnTest in self.controllerTestList:
             sdnTest.execute()
 
-            for testCase in self.testCaseList:
+            for env in self.testEnvList:
                 #print testCase
-		testCase.setTopology(sdnTest.topoFileName, sdnTest.nwTopoName)
-		testCase.runTestCase(self.applicationName)
+		env.setTopology(sdnTest.topoFileName, sdnTest.nwTopoName)
+		env.setupEnvironment()
 
-            print sdnTest.result()
+            print self.writerObject.write(sdnTest.result())

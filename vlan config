@@ -1,0 +1,12 @@
+h1 vconfig add h1-eth0 100
+h2 vconfig add h2-eth0 200
+h3 vconfig add h3-eth0 100
+h4 vconfig add h4-eth0 200
+h1 route del –net 10.0.0.0 netmask 255.0.0.0
+h2 route del –net 10.0.0.0 netmask 255.0.0.0
+h3 route del –net 10.0.0.0 netmask 255.0.0.0
+h4 route del –net 10.0.0.0 netmask 255.0.0.0
+h1 ifconfig h1-eth0.100 10.0.0.1
+h2 ifconfig h2-eth0.200 10.0.0.2
+h3 ifconfig h3-eth0.100 10.0.0.3
+h4 ifconfig h4-eth0.200 10.0.0.4

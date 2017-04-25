@@ -1,14 +1,1 @@
-
-OUTDATED FILE, PLEASE IGNORE !!!!!!!!!
-
-
-*****Coding file***** - testBed.sh
-Shell script
-Runs controllers(Frenetic, Pyretic, and Kinetic for now)
-Runs Mininet using python API
-
-
-*****Mininet file*****
-Runs network simulation with 1 switch, three hosts connected to the switch
-Tests : Pingall and # of rules installed in switch
-iPerf not working
+Instructions related to install controllers are placed into directory named "Installation Instructions".

@@ -1,0 +1,9 @@
+*************** Instructions to setup kinetic controller **********************************
+1. Installs kinetic controller that runs on top of pyretic
+********************************************************************************************
+
+
+cd ~/pyretic
+git pull
+git checkout kinetic
+export KINETICPATH=$HOME/pyretic/pyretic/kinetic

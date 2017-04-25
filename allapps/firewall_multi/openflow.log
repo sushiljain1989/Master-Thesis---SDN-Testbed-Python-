@@ -1,0 +1,576 @@
+2017-04-17 10:45:27.530629Z Info Setting log_level to Debug
+2017-04-17 10:45:27.628553Z Error Upstream socket closed unexpectedly!
+2017-04-17 10:45:29.202292Z Debug Switch 0x1 connected
+2017-04-17 10:45:29.202298Z Debug Switch 0x2 connected
+2017-04-17 10:45:29.348559Z Info Writing event response PacketIn
+2017-04-17 10:45:29.359052Z Info Writing event response PacketIn
+2017-04-17 10:45:29.367012Z Info Writing event response PacketIn
+2017-04-17 10:45:29.416496Z Info Writing event response SwitchDown
+2017-04-17 10:45:29.640145Z Info Writing event response PacketIn
+2017-04-17 10:45:29.724515Z Info Writing event response SwitchDown
+2017-04-17 10:45:29.779017Z Info Writing event response PacketIn
+2017-04-17 10:45:29.787040Z Info Writing event response PacketIn
+2017-04-17 10:45:29.848195Z Info Writing event response SwitchDown
+2017-04-17 10:45:30.047296Z Info Writing event response SwitchDown
+2017-04-17 10:45:30.217229Z Info Writing event response SwitchDown
+2017-04-17 10:45:30.217415Z Info Writing event response SwitchDown
+2017-04-17 10:45:30.831039Z Info Writing event response SwitchDown
+2017-04-17 10:45:32.269567Z Info Writing event response SwitchDown
+2017-04-17 10:45:32.452535Z Info Writing event response SwitchDown
+2017-04-17 10:45:33.100663Z Info Writing event response SwitchDown
+2017-04-17 10:45:35.350236Z Info Writing event response SwitchDown
+2017-04-17 10:45:36.569607Z Info Writing event response SwitchDown
+2017-04-17 10:45:39.294132Z Info Writing event response SwitchDown
+2017-04-17 10:45:39.668302Z Info Writing event response SwitchDown
+2017-04-17 10:45:54.887344Z Info Writing event response PortDown
+2017-04-17 10:45:57.910652Z Info Writing event response PortDown
+2017-04-17 10:45:58.126872Z Info Writing event response PortDown
+2017-04-17 10:45:58.126927Z Info Writing event response PortDown
+2017-04-17 12:54:27.141281Z Info Setting log_level to Debug
+2017-04-17 12:54:27.174862Z Error Upstream socket closed unexpectedly!
+2017-04-17 12:54:28.527500Z Debug Switch 0x2 connected
+2017-04-17 12:54:28.527511Z Debug Switch 0x1 connected
+2017-04-17 12:54:28.527662Z Info Writing event response SwitchDown
+2017-04-17 12:54:28.639777Z Info Writing event response PacketIn
+2017-04-17 12:54:28.891457Z Info Writing event response SwitchDown
+2017-04-17 12:54:28.944344Z Info Writing event response PacketIn
+2017-04-17 12:54:28.975429Z Info Writing event response PacketIn
+2017-04-17 12:54:29.079309Z Info Writing event response PacketIn
+2017-04-17 12:54:29.183454Z Info Writing event response SwitchDown
+2017-04-17 12:54:29.243795Z Info Writing event response PacketIn
+2017-04-17 12:54:29.348996Z Info Writing event response SwitchDown
+2017-04-17 12:54:29.379460Z Info Writing event response SwitchDown
+2017-04-17 12:54:29.479455Z Info Writing event response SwitchDown
+2017-04-17 12:54:30.183477Z Info Writing event response SwitchDown
+2017-04-17 12:54:30.183528Z Info Writing event response SwitchDown
+2017-04-17 12:54:30.564557Z Info Writing event response SwitchDown
+2017-04-17 12:54:30.597825Z Info Writing event response SwitchDown
+2017-04-17 12:54:31.361596Z Info Writing event response SwitchDown
+2017-04-17 12:54:31.435549Z Info Writing event response SwitchDown
+2017-04-17 12:54:34.332075Z Info Writing event response SwitchDown
+2017-04-17 12:54:35.023368Z Info Writing event response SwitchDown
+2017-04-17 12:54:38.542195Z Info Writing event response SwitchDown
+2017-04-17 12:54:38.788548Z Info Writing event response SwitchDown
+2017-04-17 12:55:09.318857Z Info Writing event response SwitchDown
+2017-04-17 12:55:09.819602Z Info Writing event response PortDown
+2017-04-17 12:55:11.242642Z Info Writing event response SwitchDown
+2017-04-17 12:55:11.419621Z Info Writing event response PortDown
+2017-04-17 12:55:11.593973Z Info Writing event response PortDown
+2017-04-17 12:55:11.594001Z Info Writing event response PortDown
+2017-04-17 13:00:57.432976Z Info Setting log_level to Debug
+2017-04-17 13:00:57.450908Z Error Upstream socket closed unexpectedly!
+2017-04-17 13:00:58.838895Z Debug Switch 0x2 connected
+2017-04-17 13:00:58.838902Z Debug Switch 0x1 connected
+2017-04-17 13:00:58.838946Z Info Writing event response PortUp
+2017-04-17 13:00:58.915410Z Info Writing event response SwitchDown
+2017-04-17 13:00:58.928568Z Info Writing event response PacketIn
+2017-04-17 13:00:58.956000Z Info Writing event response SwitchDown
+2017-04-17 13:00:58.977414Z Info Writing event response PacketIn
+2017-04-17 13:00:59.159445Z Info Writing event response SwitchDown
+2017-04-17 13:00:59.475505Z Info Writing event response SwitchDown
+2017-04-17 13:00:59.487429Z Info Writing event response PacketIn
+2017-04-17 13:00:59.628405Z Info Writing event response SwitchDown
+2017-04-17 13:00:59.651429Z Info Writing event response PacketIn
+2017-04-17 13:00:59.655288Z Info Writing event response PacketIn
+2017-04-17 13:01:00.159445Z Info Writing event response SwitchDown
+2017-04-17 13:01:00.159483Z Info Writing event response SwitchDown
+2017-04-17 13:01:00.292600Z Info Writing event response SwitchDown
+2017-04-17 13:01:00.476464Z Info Writing event response SwitchDown
+2017-04-17 13:01:00.476508Z Info Writing event response SwitchDown
+2017-04-17 13:01:00.655521Z Info Writing event response PacketIn
+2017-04-17 13:01:00.655562Z Info Writing event response PacketIn
+2017-04-17 13:01:00.975425Z Info Writing event response SwitchDown
+2017-04-17 13:01:01.625061Z Info Writing event response PacketIn
+2017-04-17 13:01:04.264543Z Info Writing event response PacketIn
+2017-04-17 13:01:04.655531Z Info Writing event response SwitchDown
+2017-04-17 13:01:04.733838Z Info Writing event response SwitchDown
+2017-04-17 13:01:04.872094Z Info Writing event response PacketIn
+2017-04-17 13:01:05.015361Z Info Writing event response PacketIn
+2017-04-17 13:01:05.835660Z Info Writing event response PacketIn
+2017-04-17 13:01:06.923107Z Info Writing event response PacketIn
+2017-04-17 13:01:07.897741Z Info Writing event response PacketIn
+2017-04-17 13:01:08.236967Z Info Writing event response SwitchDown
+2017-04-17 13:01:08.550062Z Info Writing event response SwitchDown
+2017-04-17 13:01:08.780701Z Info Writing event response PacketIn
+2017-04-17 13:01:09.520210Z Info Writing event response PacketIn
+2017-04-17 13:01:10.101082Z Info Writing event response PacketIn
+2017-04-17 13:01:11.107789Z Info Writing event response PacketIn
+2017-04-17 13:01:12.113699Z Info Writing event response PacketIn
+2017-04-17 13:01:58.442701Z Info Writing event response PortDown
+2017-04-17 13:02:00.634071Z Info Writing event response SwitchDown
+2017-04-17 13:02:00.872428Z Info Writing event response PortDown
+2017-04-17 13:02:01.220872Z Info Writing event response PortDown
+2017-04-17 13:02:01.220881Z Info Writing event response PortDown
+2017-04-17 13:13:23.316773Z Info Setting log_level to Debug
+2017-04-17 13:13:23.418421Z Error Upstream socket closed unexpectedly!
+2017-04-17 13:13:27.801589Z Debug Switch 0x2 connected
+2017-04-17 13:13:27.805266Z Debug Switch 0x1 connected
+2017-04-17 13:13:27.812527Z Info Writing event response PacketIn
+2017-04-17 13:13:27.812602Z Info Writing event response SwitchDown
+2017-04-17 13:13:27.841863Z Info Writing event response PacketIn
+2017-04-17 13:13:27.841872Z Info Writing event response PacketIn
+2017-04-17 13:13:27.937341Z Info Writing event response PacketIn
+2017-04-17 13:13:27.955707Z Info Writing event response SwitchDown
+2017-04-17 13:13:27.963164Z Info Writing event response PacketIn
+2017-04-17 13:13:28.107476Z Info Writing event response SwitchDown
+2017-04-17 13:13:28.227702Z Info Writing event response PacketIn
+2017-04-17 13:13:28.380434Z Info Writing event response PacketIn
+2017-04-17 13:13:28.417207Z Info Writing event response SwitchDown
+2017-04-17 13:13:28.600757Z Info Received signal sigint
+2017-04-17 13:16:13.655565Z Info Setting log_level to Debug
+2017-04-17 13:16:13.669164Z Error Upstream socket closed unexpectedly!
+2017-04-17 13:16:18.065687Z Debug Switch 0x2 connected
+2017-04-17 13:16:18.069441Z Debug Switch 0x1 connected
+2017-04-17 13:16:18.108286Z Info Writing event response PacketIn
+2017-04-17 13:16:18.331182Z Info Writing event response PacketIn
+2017-04-17 13:16:18.459390Z Info Writing event response PacketIn
+2017-04-17 13:16:18.515180Z Info Writing event response SwitchDown
+2017-04-17 13:16:18.640387Z Info Writing event response SwitchDown
+2017-04-17 13:16:18.864729Z Info Writing event response SwitchDown
+2017-04-17 13:16:18.983526Z Info Writing event response PacketIn
+2017-04-17 13:16:18.983566Z Info Writing event response PacketIn
+2017-04-17 13:16:18.991157Z Info Writing event response SwitchDown
+2017-04-17 13:16:19.515672Z Info Writing event response SwitchDown
+2017-04-17 13:16:19.515716Z Info Writing event response SwitchDown
+2017-04-17 13:16:19.640202Z Info Writing event response SwitchDown
+2017-04-17 13:16:19.640246Z Info Writing event response SwitchDown
+2017-04-17 13:16:20.099193Z Info Writing event response SwitchDown
+2017-04-17 13:16:20.099193Z Info Writing event response SwitchDown
+2017-04-17 13:16:24.155911Z Info Writing event response SwitchDown
+2017-04-17 13:16:24.215121Z Info Writing event response SwitchDown
+2017-04-17 13:16:28.135609Z Info Writing event response SwitchDown
+2017-04-17 13:16:28.135621Z Info Writing event response SwitchDown
+2017-04-17 13:16:58.142667Z Info Writing event response SwitchDown
+2017-04-17 13:16:58.516032Z Info Writing event response PortDown
+2017-04-17 13:17:00.381938Z Info Writing event response SwitchDown
+2017-04-17 13:17:00.381986Z Info Writing event response PortDown
+2017-04-17 13:17:01.147317Z Info Writing event response PortDown
+2017-04-17 13:17:01.276139Z Info Writing event response PortDown
+2017-04-18 11:57:10.751089Z Info Setting log_level to Debug
+2017-04-18 11:57:10.785281Z Error Upstream socket closed unexpectedly!
+2017-04-18 11:57:12.634201Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 1; hw_addr = 4e:b4:b4:71:85:08; name = s1-eth1         ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = true; copper = true; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 11:57:12.634242Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 2; hw_addr = 6e:7a:74:68:20:40; name = s1-eth2         ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = true; copper = true; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 11:57:12.671209Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 65534; hw_addr = 7e:3c:9b:0e:75:2f; name = s1              ; config = { down = true; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = true; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 11:57:12.671240Z Debug Dropping unexpected msg received before SwitchFeatures response: PACKET_IN { in_port = 2; payload = #256[dlSrc=00:00:00:00:00:02,dlDst=33:33:00:00:00:16,frameType=0x86DD] }
+2017-04-18 11:57:12.671254Z Debug Switch 0x3 connected
+2017-04-18 11:57:12.671318Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = MODIFY; desc = { port_no = 65534; hw_addr = 4e:17:1a:77:b8:43; name = s1              ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 11:57:12.671332Z Debug Dropping unexpected msg received before SwitchFeatures response: PACKET_IN { in_port = 65534; payload = #257[dlSrc=62:e6:4a:1c:9a:48,dlDst=33:33:00:00:00:16,frameType=0x86DD] }
+2017-04-18 11:57:12.671345Z Debug Switch 0x1 connected
+2017-04-18 11:57:12.671349Z Debug Switch 0x2 connected
+2017-04-18 11:57:12.681390Z Info Writing event response SwitchDown
+2017-04-18 11:57:13.241798Z Info Writing event response SwitchDown
+2017-04-18 11:58:12.124359Z Info Writing event response SwitchDown
+2017-04-18 11:58:12.124396Z Info Writing event response PortDown
+2017-04-18 11:58:12.398947Z Info Writing event response SwitchDown
+2017-04-18 11:58:12.398947Z Info Writing event response PortDown
+2017-04-18 11:58:12.398947Z Info Writing event response PortDown
+2017-04-18 11:58:12.398947Z Info Writing event response PortDown
+2017-04-18 11:58:13.267152Z Debug Switch 0x3 disconnected
+2017-04-18 11:58:13.273628Z Debug Switch 0x2 disconnected
+2017-04-18 11:58:13.286162Z Debug Switch 0x1 disconnected
+2017-04-18 12:22:44.584370Z Info Setting log_level to Debug
+2017-04-18 12:22:44.592204Z Error Upstream socket closed unexpectedly!
+2017-04-18 12:22:46.298982Z Debug Switch 0x3 connected
+2017-04-18 12:22:46.302261Z Debug Switch 0x2 connected
+2017-04-18 12:22:46.302268Z Debug Switch 0x1 connected
+2017-04-18 12:22:46.302309Z Info Writing event response PortUp
+2017-04-18 12:22:46.302315Z Info Writing event response PortUp
+2017-04-18 12:22:46.330542Z Info Writing event response SwitchDown
+2017-04-18 12:22:46.330548Z Info Writing event response SwitchDown
+2017-04-18 12:22:46.330602Z Info Writing event response SwitchDown
+2017-04-18 12:22:46.451077Z Info Writing event response PacketIn
+2017-04-18 12:22:46.644747Z Info Writing event response PacketIn
+2017-04-18 12:22:46.669793Z Info Writing event response PacketIn
+2017-04-18 12:22:46.804833Z Info Writing event response SwitchDown
+2017-04-18 12:22:46.864745Z Info Writing event response SwitchDown
+2017-04-18 12:22:46.945906Z Info Writing event response PacketIn
+2017-04-18 12:22:47.015564Z Info Writing event response SwitchDown
+2017-04-18 12:22:47.034210Z Info Writing event response SwitchDown
+2017-04-18 12:22:47.200864Z Info Writing event response SwitchDown
+2017-04-18 12:22:47.209911Z Info Writing event response PacketIn
+2017-04-18 12:22:47.209949Z Info Writing event response PacketIn
+2017-04-18 12:22:47.864838Z Info Writing event response SwitchDown
+2017-04-18 12:22:47.864873Z Info Writing event response SwitchDown
+2017-04-18 12:22:47.997834Z Info Writing event response SwitchDown
+2017-04-18 12:22:48.013076Z Info Writing event response SwitchDown
+2017-04-18 12:22:48.013109Z Info Writing event response SwitchDown
+2017-04-18 12:22:48.502046Z Info Writing event response SwitchDown
+2017-04-18 12:22:51.874266Z Info Writing event response SwitchDown
+2017-04-18 12:22:52.016869Z Info Writing event response SwitchDown
+2017-04-18 12:22:55.881214Z Info Writing event response SwitchDown
+2017-04-18 12:22:56.025655Z Info Writing event response SwitchDown
+2017-04-18 12:23:10.408146Z Info Writing event response SwitchDown
+2017-04-18 12:23:10.408179Z Info Writing event response PortDown
+2017-04-18 12:23:10.689674Z Info Writing event response SwitchDown
+2017-04-18 12:23:10.689682Z Info Writing event response PortDown
+2017-04-18 12:23:10.689719Z Info Writing event response PortDown
+2017-04-18 12:23:10.689723Z Info Writing event response PortDown
+2017-04-18 12:23:11.552644Z Debug Switch 0x3 disconnected
+2017-04-18 12:23:11.561769Z Debug Switch 0x2 disconnected
+2017-04-18 12:23:11.571635Z Debug Switch 0x1 disconnected
+2017-04-18 12:49:37.046427Z Info Setting log_level to Debug
+2017-04-18 12:49:37.068699Z Error Upstream socket closed unexpectedly!
+2017-04-18 12:49:38.763552Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 3; hw_addr = c2:eb:ad:59:41:c1; name = s3-eth3         ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = true; copper = true; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 12:49:38.763592Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 1; hw_addr = be:5c:07:87:e3:92; name = s3-eth1         ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = true; copper = true; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 12:49:38.794735Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 65534; hw_addr = 8e:67:0c:13:55:85; name = s4              ; config = { down = true; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = true; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 12:49:38.794763Z Debug Dropping unexpected msg received before SwitchFeatures response: PACKET_IN { in_port = 65534; payload = #256[dlSrc=26:8c:08:d6:3c:45,dlDst=33:33:00:00:00:16,frameType=0x86DD] }
+2017-04-18 12:49:38.794774Z Debug Switch 0x2 connected
+2017-04-18 12:49:38.794777Z Debug Switch 0x1 connected
+2017-04-18 12:49:38.794841Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = MODIFY; desc = { port_no = 65534; hw_addr = 82:e3:f0:a6:d3:47; name = s4              ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 12:49:38.794848Z Debug Switch 0x3 connected
+2017-04-18 12:49:38.794853Z Info Writing event response PortUp
+2017-04-18 12:49:38.794865Z Debug Switch 0x4 connected
+2017-04-18 12:49:38.794866Z Info Writing event response PortUp
+2017-04-18 12:49:38.794872Z Info Writing event response PortUp
+2017-04-18 12:49:38.794875Z Info Writing event response PortUp
+2017-04-18 12:49:38.794880Z Info Writing event response PortUp
+2017-04-18 12:49:38.833727Z Info Writing event response SwitchDown
+2017-04-18 12:49:38.833744Z Info Writing event response PacketIn
+2017-04-18 12:49:38.833757Z Info Writing event response SwitchDown
+2017-04-18 12:49:38.833765Z Info Writing event response PortUp
+2017-04-18 12:49:38.833827Z Info Writing event response SwitchDown
+2017-04-18 12:49:38.833834Z Info Writing event response PortUp
+2017-04-18 12:49:38.833851Z Info Writing event response PortUp
+2017-04-18 12:49:38.833857Z Info Writing event response PortUp
+2017-04-18 12:49:38.863938Z Info Writing event response SwitchDown
+2017-04-18 12:49:38.863974Z Info Writing event response SwitchDown
+2017-04-18 12:49:38.906395Z Info Writing event response PacketIn
+2017-04-18 12:49:38.962972Z Info Writing event response PacketIn
+2017-04-18 12:49:38.966449Z Info Writing event response PacketIn
+2017-04-18 12:49:39.205469Z Info Writing event response PacketIn
+2017-04-18 12:49:39.238351Z Info Writing event response PacketIn
+2017-04-18 12:49:39.246410Z Info Writing event response SwitchDown
+2017-04-18 12:49:39.321667Z Info Writing event response PacketIn
+2017-04-18 12:49:39.321694Z Info Writing event response PacketIn
+2017-04-18 12:49:39.345163Z Info Writing event response SwitchDown
+2017-04-18 12:49:39.372536Z Info Writing event response PacketIn
+2017-04-18 12:49:39.382781Z Info Writing event response PacketIn
+2017-04-18 12:49:39.412682Z Info Writing event response PacketIn
+2017-04-18 12:49:39.448458Z Info Writing event response SwitchDown
+2017-04-18 12:49:39.461800Z Info Writing event response SwitchDown
+2017-04-18 12:49:39.491616Z Info Writing event response SwitchDown
+2017-04-18 12:49:39.501154Z Info Writing event response PacketIn
+2017-04-18 12:49:39.505936Z Info Writing event response SwitchDown
+2017-04-18 12:49:39.725061Z Info Writing event response SwitchDown
+2017-04-18 12:49:40.449214Z Info Writing event response SwitchDown
+2017-04-18 12:49:40.449255Z Info Writing event response SwitchDown
+2017-04-18 12:49:40.489695Z Info Writing event response SwitchDown
+2017-04-18 12:49:40.489743Z Info Writing event response SwitchDown
+2017-04-18 12:49:40.726475Z Info Writing event response SwitchDown
+2017-04-18 12:49:40.726515Z Info Writing event response SwitchDown
+2017-04-18 12:49:41.205853Z Info Writing event response SwitchDown
+2017-04-18 12:49:41.276945Z Info Writing event response SwitchDown
+2017-04-18 12:49:41.697026Z Info Writing event response SwitchDown
+2017-04-18 12:49:44.458199Z Info Writing event response SwitchDown
+2017-04-18 12:49:44.497015Z Info Writing event response SwitchDown
+2017-04-18 12:49:44.737065Z Info Writing event response SwitchDown
+2017-04-18 12:49:48.465059Z Info Writing event response SwitchDown
+2017-04-18 12:49:48.504946Z Info Writing event response SwitchDown
+2017-04-18 12:49:48.744825Z Info Writing event response SwitchDown
+2017-04-18 12:50:02.881726Z Info Writing event response SwitchDown
+2017-04-18 12:50:02.881785Z Info Writing event response PortDown
+2017-04-18 12:50:03.151038Z Info Writing event response SwitchDown
+2017-04-18 12:50:03.151044Z Info Writing event response PortDown
+2017-04-18 12:50:03.151050Z Info Writing event response PortDown
+2017-04-18 12:50:03.151080Z Info Writing event response PortDown
+2017-04-18 12:50:03.151081Z Info Writing event response PortDown
+2017-04-18 12:50:03.151087Z Info Writing event response PortDown
+2017-04-18 12:50:04.027031Z Debug Switch 0x3 disconnected
+2017-04-18 12:50:04.033627Z Debug Switch 0x4 disconnected
+2017-04-18 12:50:04.040844Z Debug Switch 0x2 disconnected
+2017-04-18 12:50:04.048954Z Debug Switch 0x1 disconnected
+2017-04-18 14:16:00.516373Z Info Setting log_level to Debug
+2017-04-18 14:16:00.541752Z Error Upstream socket closed unexpectedly!
+2017-04-18 14:16:02.244765Z Debug Switch 0x3 connected
+2017-04-18 14:16:02.244776Z Debug Switch 0x4 connected
+2017-04-18 14:16:02.244780Z Debug Switch 0x2 connected
+2017-04-18 14:16:02.244782Z Debug Switch 0x1 connected
+2017-04-18 14:16:02.244830Z Info Writing event response PortUp
+2017-04-18 14:16:02.244832Z Info Writing event response PortUp
+2017-04-18 14:16:02.244840Z Info Writing event response PortUp
+2017-04-18 14:16:02.244841Z Info Writing event response PortUp
+2017-04-18 14:16:02.276945Z Info Writing event response SwitchDown
+2017-04-18 14:16:02.276951Z Info Writing event response SwitchDown
+2017-04-18 14:16:02.276958Z Info Writing event response PortUp
+2017-04-18 14:16:02.276995Z Info Writing event response SwitchDown
+2017-04-18 14:16:02.276996Z Info Writing event response PortUp
+2017-04-18 14:16:02.277002Z Info Writing event response PortUp
+2017-04-18 14:16:02.302777Z Info Writing event response SwitchDown
+2017-04-18 14:16:02.302808Z Info Writing event response SwitchDown
+2017-04-18 14:16:02.302814Z Info Writing event response PortUp
+2017-04-18 14:16:02.386432Z Info Writing event response PacketIn
+2017-04-18 14:16:02.489201Z Info Writing event response PacketIn
+2017-04-18 14:16:02.552118Z Info Writing event response PacketIn
+2017-04-18 14:16:02.572379Z Info Writing event response PacketIn
+2017-04-18 14:16:02.594463Z Info Writing event response PacketIn
+2017-04-18 14:16:02.645265Z Info Writing event response SwitchDown
+2017-04-18 14:16:02.674897Z Info Writing event response PacketIn
+2017-04-18 14:16:02.695985Z Info Writing event response PacketIn
+2017-04-18 14:16:02.784969Z Info Writing event response PacketIn
+2017-04-18 14:16:02.785003Z Info Writing event response PacketIn
+2017-04-18 14:16:02.872412Z Info Writing event response PacketIn
+2017-04-18 14:16:02.897969Z Info Writing event response SwitchDown
+2017-04-18 14:16:02.953498Z Info Writing event response SwitchDown
+2017-04-18 14:16:03.045920Z Info Writing event response SwitchDown
+2017-04-18 14:16:03.050092Z Info Writing event response SwitchDown
+2017-04-18 14:16:03.190524Z Info Writing event response PacketIn
+2017-04-18 14:16:03.190572Z Info Writing event response PacketIn
+2017-04-18 14:16:03.203394Z Info Writing event response SwitchDown
+2017-04-18 14:16:03.217351Z Info Writing event response SwitchDown
+2017-04-18 14:16:03.217385Z Info Writing event response SwitchDown
+2017-04-18 14:16:03.629237Z Info Writing event response SwitchDown
+2017-04-18 14:16:03.645305Z Info Writing event response SwitchDown
+2017-04-18 14:16:03.645346Z Info Writing event response SwitchDown
+2017-04-18 14:16:03.808884Z Info Writing event response SwitchDown
+2017-04-18 14:16:04.201313Z Info Writing event response SwitchDown
+2017-04-18 14:16:04.202707Z Info Writing event response SwitchDown
+2017-04-18 14:16:04.577221Z Info Writing event response SwitchDown
+2017-04-18 14:16:07.221287Z Info Writing event response SwitchDown
+2017-04-18 14:16:07.653267Z Info Writing event response SwitchDown
+2017-04-18 14:16:08.214222Z Info Writing event response SwitchDown
+2017-04-18 14:16:11.229213Z Info Writing event response SwitchDown
+2017-04-18 14:16:11.662445Z Info Writing event response SwitchDown
+2017-04-18 14:16:12.221193Z Info Writing event response SwitchDown
+2017-04-18 14:16:26.331964Z Info Writing event response SwitchDown
+2017-04-18 14:16:26.331964Z Info Writing event response PortDown
+2017-04-18 14:16:26.606912Z Info Writing event response SwitchDown
+2017-04-18 14:16:26.606918Z Info Writing event response PortDown
+2017-04-18 14:16:26.606924Z Info Writing event response PortDown
+2017-04-18 14:16:26.606968Z Info Writing event response PortDown
+2017-04-18 14:16:26.606969Z Info Writing event response PortDown
+2017-04-18 14:16:26.606975Z Info Writing event response PortDown
+2017-04-18 14:16:27.475515Z Debug Switch 0x3 disconnected
+2017-04-18 14:16:27.481529Z Debug Switch 0x4 disconnected
+2017-04-18 14:16:27.489094Z Debug Switch 0x2 disconnected
+2017-04-18 14:16:27.497149Z Debug Switch 0x1 disconnected
+2017-04-18 14:21:09.163101Z Info Setting log_level to Debug
+2017-04-18 14:21:09.183106Z Error Upstream socket closed unexpectedly!
+2017-04-18 14:21:11.342210Z Debug Switch 0x3 connected
+2017-04-18 14:21:11.342218Z Debug Switch 0x4 connected
+2017-04-18 14:21:11.342222Z Debug Switch 0x2 connected
+2017-04-18 14:21:11.342225Z Debug Switch 0x1 connected
+2017-04-18 14:21:11.342271Z Info Writing event response PortUp
+2017-04-18 14:21:11.342273Z Info Writing event response PortUp
+2017-04-18 14:21:11.342280Z Info Writing event response PortUp
+2017-04-18 14:21:11.342285Z Info Writing event response PortUp
+2017-04-18 14:21:11.381277Z Info Writing event response SwitchDown
+2017-04-18 14:21:11.381286Z Info Writing event response PacketIn
+2017-04-18 14:21:11.381291Z Info Writing event response SwitchDown
+2017-04-18 14:21:11.381343Z Info Writing event response SwitchDown
+2017-04-18 14:21:11.381348Z Info Writing event response SwitchDown
+2017-04-18 14:21:11.520889Z Info Writing event response SwitchDown
+2017-04-18 14:21:11.565936Z Info Writing event response PacketIn
+2017-04-18 14:21:11.589553Z Info Writing event response PacketIn
+2017-04-18 14:21:11.709951Z Info Writing event response SwitchDown
+2017-04-18 14:21:11.721366Z Info Writing event response PacketIn
+2017-04-18 14:21:11.724959Z Info Writing event response SwitchDown
+2017-04-18 14:21:11.762495Z Info Writing event response PacketIn
+2017-04-18 14:21:11.769625Z Info Writing event response PacketIn
+2017-04-18 14:21:11.769648Z Info Writing event response PacketIn
+2017-04-18 14:21:11.773511Z Info Writing event response SwitchDown
+2017-04-18 14:21:11.823875Z Info Writing event response SwitchDown
+2017-04-18 14:21:11.893364Z Info Writing event response SwitchDown
+2017-04-18 14:21:12.281601Z Info Writing event response SwitchDown
+2017-04-18 14:21:12.281730Z Info Writing event response SwitchDown
+2017-04-18 14:21:12.453269Z Info Writing event response PacketIn
+2017-04-18 14:21:12.453325Z Info Writing event response PacketIn
+2017-04-18 14:21:12.468993Z Info Writing event response PacketIn
+2017-04-18 14:21:12.469029Z Info Writing event response PacketIn
+2017-04-18 14:21:12.482546Z Info Writing event response PacketIn
+2017-04-18 14:21:12.585298Z Info Writing event response PacketIn
+2017-04-18 14:21:12.727283Z Info Writing event response SwitchDown
+2017-04-18 14:21:12.727323Z Info Writing event response SwitchDown
+2017-04-18 14:21:12.796879Z Info Writing event response SwitchDown
+2017-04-18 14:21:12.892947Z Info Writing event response SwitchDown
+2017-04-18 14:21:12.892958Z Info Writing event response SwitchDown
+2017-04-18 14:21:12.892995Z Info Writing event response SwitchDown
+2017-04-18 14:21:13.056933Z Info Writing event response SwitchDown
+2017-04-18 14:21:16.293954Z Info Writing event response SwitchDown
+2017-04-18 14:21:16.733235Z Info Writing event response SwitchDown
+2017-04-18 14:21:16.902755Z Info Writing event response SwitchDown
+2017-04-18 14:21:20.301097Z Info Writing event response SwitchDown
+2017-04-18 14:21:20.741054Z Info Writing event response SwitchDown
+2017-04-18 14:21:20.909289Z Info Writing event response SwitchDown
+2017-04-18 14:21:35.062918Z Info Writing event response SwitchDown
+2017-04-18 14:21:35.062955Z Info Writing event response PortDown
+2017-04-18 14:21:35.347678Z Info Writing event response SwitchDown
+2017-04-18 14:21:35.347685Z Info Writing event response PortDown
+2017-04-18 14:21:35.347691Z Info Writing event response PortDown
+2017-04-18 14:21:35.347724Z Info Writing event response PortDown
+2017-04-18 14:21:35.347725Z Info Writing event response PortDown
+2017-04-18 14:21:35.347731Z Info Writing event response PortDown
+2017-04-18 14:21:36.252526Z Debug Switch 0x3 disconnected
+2017-04-18 14:21:36.255508Z Debug Switch 0x4 disconnected
+2017-04-18 14:21:36.273356Z Debug Switch 0x2 disconnected
+2017-04-18 14:21:36.273361Z Debug Switch 0x1 disconnected
+2017-04-18 17:38:06.884916Z Info Setting log_level to Debug
+2017-04-18 17:38:06.898402Z Error Upstream socket closed unexpectedly!
+2017-04-18 17:38:08.540930Z Debug Switch 0x1 connected
+2017-04-18 17:38:08.545636Z Info Writing event response SwitchDown
+2017-04-18 17:38:09.321719Z Info Writing event response SwitchDown
+2017-04-18 17:39:32.229990Z Info Writing event response SwitchDown
+2017-04-18 17:39:32.230025Z Info Writing event response PortDown
+2017-04-18 17:39:32.505182Z Info Writing event response SwitchDown
+2017-04-18 17:39:32.505218Z Info Writing event response PortDown
+2017-04-18 17:39:32.505224Z Info Writing event response PortDown
+2017-04-18 17:39:32.505230Z Info Writing event response PortDown
+2017-04-18 17:39:32.505243Z Info Writing event response PortDown
+2017-04-18 17:39:33.610584Z Debug Switch 0x1 disconnected
+2017-04-18 19:19:54.728412Z Info Setting log_level to Debug
+2017-04-18 19:19:54.753327Z Error Upstream socket closed unexpectedly!
+2017-04-18 19:19:57.108390Z Debug Switch 0x3 connected
+2017-04-18 19:19:57.108399Z Debug Switch 0x2 connected
+2017-04-18 19:19:57.108404Z Debug Switch 0x1 connected
+2017-04-18 19:19:57.108454Z Info Writing event response SwitchDown
+2017-04-18 19:19:57.322841Z Info Writing event response SwitchDown
+2017-04-18 19:20:58.267549Z Info Received signal sigint
+2017-04-18 21:12:33.417765Z Info Setting log_level to Debug
+2017-04-18 21:12:33.430245Z Error Upstream socket closed unexpectedly!
+2017-04-18 21:12:35.736895Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 4; hw_addr = d6:05:87:29:18:96; name = s4-eth4         ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = true; copper = true; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 21:12:35.736930Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 3; hw_addr = 26:07:ca:d1:6c:95; name = s4-eth3         ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = true; copper = true; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 21:12:35.736948Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 1; hw_addr = e6:e1:be:92:dd:89; name = s4-eth1         ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = true; copper = true; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 21:12:35.736969Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 6; hw_addr = 72:2f:60:db:b9:c5; name = s4-eth6         ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = true; copper = true; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 21:12:35.761903Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = ADD; desc = { port_no = 65534; hw_addr = 3a:e9:a4:22:bd:0e; name = s3              ; config = { down = true; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = true; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 21:12:35.761932Z Debug Dropping unexpected msg received before SwitchFeatures response: PACKET_IN { in_port = 65534; payload = #256[dlSrc=a2:fc:95:b8:01:4a,dlDst=33:33:00:00:00:16,frameType=0x86DD] }
+2017-04-18 21:12:35.761943Z Debug Switch 0x2 connected
+2017-04-18 21:12:35.761946Z Debug Switch 0x1 connected
+2017-04-18 21:12:35.762012Z Debug Dropping unexpected msg received before SwitchFeatures response: PORT_STATUS { reason = MODIFY; desc = { port_no = 65534; hw_addr = 62:1b:30:85:ce:45; name = s3              ; config = { down = false; no_stp = false; no_recv = false; no_recv_stp = false; no_flood = false; no_fwd = false; no_packet_in = false }; state = { down = false; stp_state = LISTEN }; curr = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; advertised = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; supported = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false }; peer = { f_10MBHD = false; f_10MBFD = false; f_100MBHD = false; f_100MBFD = false; f_1GBHD = false; f_1GBFD = false; f_10GBFD = false; copper = false; fiber = false; autoneg = false; pause = false; pause_asym = false } } }
+2017-04-18 21:12:35.762018Z Debug Switch 0x4 connected
+2017-04-18 21:12:35.762024Z Info Writing event response PortUp
+2017-04-18 21:12:35.762038Z Debug Switch 0x3 connected
+2017-04-18 21:12:35.762039Z Info Writing event response PortUp
+2017-04-18 21:12:35.762045Z Info Writing event response PortUp
+2017-04-18 21:12:35.762046Z Info Writing event response PortUp
+2017-04-18 21:12:35.762052Z Info Writing event response PortUp
+2017-04-18 21:12:35.762053Z Info Writing event response PortUp
+2017-04-18 21:12:35.762065Z Info Writing event response PortUp
+2017-04-18 21:12:35.762066Z Info Writing event response PortUp
+2017-04-18 21:12:35.762070Z Info Writing event response PortUp
+2017-04-18 21:12:35.762074Z Info Writing event response PortUp
+2017-04-18 21:12:35.762078Z Info Writing event response PortUp
+2017-04-18 21:12:35.804459Z Info Writing event response SwitchDown
+2017-04-18 21:12:35.804473Z Info Writing event response PacketIn
+2017-04-18 21:12:35.804481Z Info Writing event response SwitchDown
+2017-04-18 21:12:35.804491Z Info Writing event response PortUp
+2017-04-18 21:12:35.804565Z Info Writing event response SwitchDown
+2017-04-18 21:12:35.804568Z Info Writing event response PortUp
+2017-04-18 21:12:35.804592Z Info Writing event response PortUp
+2017-04-18 21:12:35.847924Z Info Writing event response SwitchDown
+2017-04-18 21:12:35.847958Z Info Writing event response SwitchDown
+2017-04-18 21:12:35.847964Z Info Writing event response PortUp
+2017-04-18 21:12:35.903610Z Info Writing event response SwitchDown
+2017-04-18 21:12:35.932308Z Info Writing event response SwitchDown
+2017-04-18 21:12:35.951264Z Info Writing event response PacketIn
+2017-04-18 21:12:35.977267Z Info Writing event response PacketIn
+2017-04-18 21:12:35.989541Z Info Writing event response SwitchDown
+2017-04-18 21:12:35.989732Z Info Writing event response SwitchDown
+2017-04-18 21:12:35.995006Z Info Writing event response PacketIn
+2017-04-18 21:12:36.010531Z Info Writing event response SwitchDown
+2017-04-18 21:12:36.010566Z Info Writing event response PacketIn
+2017-04-18 21:12:36.010573Z Info Writing event response PacketIn
+2017-04-18 21:12:36.050534Z Info Writing event response PacketIn
+2017-04-18 21:12:36.073272Z Info Writing event response PacketIn
+2017-04-18 21:12:36.103067Z Info Writing event response PacketIn
+2017-04-18 21:12:36.175661Z Info Writing event response PacketIn
+2017-04-18 21:12:36.175673Z Info Writing event response PacketIn
+2017-04-18 21:12:36.225430Z Info Writing event response PacketIn
+2017-04-18 21:12:36.240812Z Info Writing event response PacketIn
+2017-04-18 21:12:36.258104Z Info Writing event response PacketIn
+2017-04-18 21:12:36.312472Z Info Writing event response PacketIn
+2017-04-18 21:12:36.332332Z Info Writing event response PacketIn
+2017-04-18 21:12:36.340887Z Info Writing event response PacketIn
+2017-04-18 21:12:36.394242Z Info Writing event response PacketIn
+2017-04-18 21:12:36.406951Z Info Writing event response PacketIn
+2017-04-18 21:12:36.424651Z Info Writing event response PacketIn
+2017-04-18 21:12:36.424698Z Info Writing event response PacketIn
+2017-04-18 21:12:36.490289Z Info Writing event response SwitchDown
+2017-04-18 21:12:36.606875Z Info Writing event response PacketIn
+2017-04-18 21:12:36.606882Z Info Writing event response PacketIn
+2017-04-18 21:12:36.606932Z Info Writing event response PacketIn
+2017-04-18 21:12:36.626390Z Info Writing event response PacketIn
+2017-04-18 21:12:36.626424Z Info Writing event response PacketIn
+2017-04-18 21:12:36.677505Z Info Writing event response PacketIn
+2017-04-18 21:12:36.730475Z Info Writing event response PacketIn
+2017-04-18 21:12:36.730517Z Info Writing event response PacketIn
+2017-04-18 21:12:36.870968Z Info Writing event response SwitchDown
+2017-04-18 21:12:36.871067Z Info Writing event response SwitchDown
+2017-04-18 21:12:36.915317Z Info Writing event response PacketIn
+2017-04-18 21:12:36.954489Z Info Writing event response PacketIn
+2017-04-18 21:12:36.965500Z Info Writing event response PacketIn
+2017-04-18 21:12:36.982332Z Info Writing event response SwitchDown
+2017-04-18 21:12:36.982363Z Info Writing event response SwitchDown
+2017-04-18 21:12:36.994696Z Info Writing event response PacketIn
+2017-04-18 21:12:36.994732Z Info Writing event response PacketIn
+2017-04-18 21:12:37.006374Z Info Writing event response SwitchDown
+2017-04-18 21:12:37.006415Z Info Writing event response SwitchDown
+2017-04-18 21:12:37.034300Z Info Writing event response PacketIn
+2017-04-18 21:12:37.089252Z Info Writing event response PacketIn
+2017-04-18 21:12:37.138764Z Info Writing event response PacketIn
+2017-04-18 21:12:37.176066Z Info Writing event response PacketIn
+2017-04-18 21:12:37.176108Z Info Writing event response PacketIn
+2017-04-18 21:12:37.194713Z Info Writing event response PacketIn
+2017-04-18 21:12:37.194771Z Info Writing event response PacketIn
+2017-04-18 21:12:37.250823Z Info Writing event response PacketIn
+2017-04-18 21:12:37.263279Z Info Writing event response PacketIn
+2017-04-18 21:12:37.263285Z Info Writing event response PacketIn
+2017-04-18 21:12:37.263327Z Info Writing event response PacketIn
+2017-04-18 21:12:37.298576Z Info Writing event response PacketIn
+2017-04-18 21:12:37.310093Z Info Writing event response SwitchDown
+2017-04-18 21:12:37.313030Z Info Writing event response PacketIn
+2017-04-18 21:12:37.328313Z Info Writing event response PacketIn
+2017-04-18 21:12:37.328379Z Info Writing event response PacketIn
+2017-04-18 21:12:37.394797Z Info Writing event response PacketIn
+2017-04-18 21:12:37.394851Z Info Writing event response PacketIn
+2017-04-18 21:12:37.471506Z Info Writing event response PacketIn
+2017-04-18 21:12:37.590449Z Info Writing event response PacketIn
+2017-04-18 21:12:37.609286Z Info Writing event response PacketIn
+2017-04-18 21:12:37.609340Z Info Writing event response PacketIn
+2017-04-18 21:12:37.638215Z Info Writing event response PacketIn
+2017-04-18 21:12:37.674975Z Info Writing event response PacketIn
+2017-04-18 21:12:37.734058Z Info Writing event response PacketIn
+2017-04-18 21:12:37.740211Z Info Writing event response PacketIn
+2017-04-18 21:12:37.752099Z Info Writing event response PacketIn
+2017-04-18 21:12:37.787658Z Info Writing event response PacketIn
+2017-04-18 21:12:37.790975Z Info Writing event response SwitchDown
+2017-04-18 21:12:37.813465Z Info Writing event response SwitchDown
+2017-04-18 21:12:37.929319Z Info Writing event response PacketIn
+2017-04-18 21:12:37.938384Z Info Writing event response PacketIn
+2017-04-18 21:12:37.947691Z Info Writing event response PacketIn
+2017-04-18 21:12:38.078486Z Info Writing event response PacketIn
+2017-04-18 21:12:38.098912Z Info Writing event response PacketIn
+2017-04-18 21:12:38.168635Z Info Writing event response PacketIn
+2017-04-18 21:12:38.373195Z Info Writing event response PacketIn
+2017-04-18 21:12:38.424454Z Info Writing event response PacketIn
+2017-04-18 21:12:38.475022Z Info Writing event response PacketIn
+2017-04-18 21:12:38.653442Z Info Writing event response PacketIn
+2017-04-18 21:12:38.717315Z Info Writing event response PacketIn
+2017-04-18 21:12:38.783248Z Info Writing event response PacketIn
+2017-04-18 21:12:38.867959Z Info Writing event response PacketIn
+2017-04-18 21:12:39.016101Z Info Writing event response PacketIn
+2017-04-18 21:12:40.882330Z Info Writing event response SwitchDown
+2017-04-18 21:12:40.994444Z Info Writing event response SwitchDown
+2017-04-18 21:12:41.010530Z Info Writing event response SwitchDown
+2017-04-18 21:12:44.890517Z Info Writing event response SwitchDown
+2017-04-18 21:12:45.003714Z Info Writing event response SwitchDown
+2017-04-18 21:12:45.019265Z Info Writing event response SwitchDown
+2017-04-18 21:18:01.461459Z Info Writing event response SwitchDown
+2017-04-18 21:18:01.461527Z Info Writing event response PortDown
+2017-04-18 21:18:01.742525Z Info Writing event response SwitchDown
+2017-04-18 21:18:01.742532Z Info Writing event response PortDown
+2017-04-18 21:18:01.742536Z Info Writing event response PortDown
+2017-04-18 21:18:01.742580Z Info Writing event response PortDown
+2017-04-18 21:18:01.742581Z Info Writing event response PortDown
+2017-04-18 21:18:01.742583Z Info Writing event response PortDown
+2017-04-18 21:18:01.742594Z Info Writing event response PortDown
+2017-04-18 21:18:01.742595Z Info Writing event response PortDown
+2017-04-18 21:18:01.742596Z Info Writing event response PortDown
+2017-04-18 21:18:01.742608Z Info Writing event response PortDown
+2017-04-18 21:18:01.742609Z Info Writing event response PortDown
+2017-04-18 21:18:01.742610Z Info Writing event response PortDown
+2017-04-18 21:18:01.742621Z Info Writing event response PortDown
+2017-04-18 21:18:01.742624Z Info Writing event response PortDown
+2017-04-18 21:18:01.742625Z Info Writing event response PortDown
+2017-04-18 21:18:02.619574Z Debug Switch 0x4 disconnected
+2017-04-18 21:18:02.627032Z Debug Switch 0x3 disconnected
+2017-04-18 21:18:02.639458Z Debug Switch 0x2 disconnected
+2017-04-18 21:18:02.647775Z Debug Switch 0x1 disconnected
